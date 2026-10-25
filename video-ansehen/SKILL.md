@@ -1,51 +1,56 @@
 ---
 name: video-ansehen
-description: YouTube-Video "ansehen" – holt Titel, Beschreibung, Kapitel und Transkript (Untertitel) eines YouTube-Links und erklärt bzw. fasst den Inhalt zusammen. Hat mehrere Ausweichwege (yt-dlp, transcript-api, Whisper, eingefügtes Transkript, Untertitel-Datei). Nutzen, wenn der Nutzer einen YouTube-Link schickt oder sagt "schau dir das Video an", "erklär das Video", "fass das Video zusammen", "was wird im Video gesagt".
+description: Wertet YouTube-Videos aus. Nutzen, wenn der Nutzer einen YouTube-Link schickt und sagt "schau dir das Video an", "fass das Video zusammen", "erklär das Video" oder "was wird im Video gesagt". Lädt mit yt-dlp Titel, Kanal, Beschreibung, Kapitel und Untertitel; gibt es keine Untertitel, wird der Ton heruntergeladen und lokal mit faster-whisper transkribiert. Kann auch Einzelbilder (Folien/Code) per ffmpeg aus dem Video holen.
 ---
 
 # Video ansehen
 
-Claude kann kein Video abspielen. Der Skill holt den **Text** des Videos (Titel, Beschreibung, Kapitel,
-Untertitel/Transkript) und arbeitet damit. Skript: `~/.claude/skills/video-ansehen/scripts/video_ansehen.py`
-(bei Cloud-Sessions: dort, wo der Skill entpackt wurde).
+Claude kann kein Video abspielen. Der Skill holt den **Text** des Videos (Infos, Kapitel, Transkript mit
+Zeitstempeln) und optional **Einzelbilder**. Skripte liegen in `~/.claude/skills/video-ansehen/scripts/`.
 
-## Ablauf (immer in dieser Reihenfolge)
+## Ablauf
 
-1. **Link nehmen**, wie er ist (`youtu.be/...?si=...`, `watch?v=`, Shorts – alles geht, Zusatzteile wie `si=` werden entfernt):
+1. **Transkript holen** (Link unverändert übergeben, `?si=…` stört nicht):
    ```bash
-   python3 ~/.claude/skills/video-ansehen/scripts/video_ansehen.py "<LINK>"
+   bash ~/.claude/skills/video-ansehen/scripts/transkript.sh "<LINK>"
    ```
-   Das Skript probiert selbst nacheinander: yt-dlp → youtube-transcript-api → oEmbed (nur Titel).
-   Fehlende Programme installiert es automatisch (`pip --user`).
+   Das Skript macht automatisch:
+   - a) Titel, Kanal, Länge, Beschreibung, Kapitel und vorhandene Untertitel laden (yt-dlp)
+   - b) Gibt es **keine Untertitel**: Ton laden und lokal mit faster-whisper transkribieren
+        (Modell `small`, Sprache wird automatisch erkannt)
+   - c) Ausgabe mit Zeitstempeln `[mm:ss]`, gespeichert in `~/video-transkripte/<ID>.txt`
+   - d) **Video über 45 Minuten:** Es zeigt nur Titel + Kapitel und lädt noch nichts.
 
-2. **Meldung "KEIN ZUGRIFF AUF YOUTUBE"** (Netzwerk gesperrt, typisch in Cloud-Sessions):
-   Nicht versuchen, das zu umgehen (keine Proxy-/TLS-Tricks). Dem Nutzer kurz sagen und anbieten:
-   - Transkript einfügen: YouTube → „…mehr“ → „Transkript anzeigen“ → kopieren → hier einfügen
-   - oder Untertitel-Datei (.vtt/.srt/.txt) hochladen → `video_ansehen.py --file <Datei>`
-   - oder in den Umgebungs-Einstellungen (Network access → Allowed domains) freischalten:
-     `www.youtube.com`, `youtu.be`, `i.ytimg.com`, `googlevideo.com`
-   - oder den Skill lokal auf dem eigenen Computer ausführen / Gemini nutzen
-   Eingefügten Text direkt analysieren (oder mit `--stdin` bereinigen).
+2. **Bei langen Videos (Meldung „LANGES VIDEO“):** Dem Nutzer die Kapitel zeigen und **fragen, welchen
+   Abschnitt** er genauer wissen will. Danach erst weiterverarbeiten:
+   ```bash
+   bash ~/.claude/skills/video-ansehen/scripts/transkript.sh "<LINK>" --abschnitt 12:00-30:00
+   bash ~/.claude/skills/video-ansehen/scripts/transkript.sh "<LINK>" --alles   # nur wenn der Nutzer das will
+   ```
 
-3. **Kein Transkript, aber Zugriff da** (Video ohne Untertitel): erneut mit `--whisper` versuchen
-   (lädt den Ton und transkribiert lokal; braucht ffmpeg, dauert länger). Klappt das nicht: ehrlich sagen,
-   dass nur Titel/Beschreibung vorliegen, und darauf beschränken.
+3. **Bilder aus dem Video** (wenn Folien, Code, Diagramme, Formeln gezeigt werden und der Text allein nicht reicht):
+   ```bash
+   bash ~/.claude/skills/video-ansehen/scripts/bilder.sh "<LINK oder Datei>" 3:10 12:45
+   ```
+   Die JPG-Dateien liegen in `~/video-transkripte/bilder/`; mit dem Read-Tool ansehen und beschreiben.
+   Passende Zeitstempel aus dem Transkript wählen (z. B. wenn „wie ihr hier seht“ gesagt wird).
 
-4. **Sprache**: Standard ist `--lang de,en`. Anderes Video → z. B. `--lang es,en`.
-
-5. **Langes Transkript** (> 30.000 Zeichen): Das Skript zeigt den Anfang und nennt die Datei
-   (`~/video-transkripte/<ID>.txt`); den Rest in Teilen lesen, dann zusammenfassen.
+4. **Fehlermeldungen**
+   - `yt-dlp`/`ffmpeg` fehlt → `bash ~/.claude/skills/video-ansehen/install.sh`
+   - „YouTube gesperrt“ / Proxy / 403 → Netzwerk blockiert YouTube. Nicht umgehen. Nutzer bitten, das
+     Transkript einzufügen („…mehr“ → „Transkript anzeigen“) oder den Skill auf seinem eigenen Rechner zu nutzen.
+   - Anmeldung/Alter nötig, Video privat → ehrlich sagen, dass es nicht lesbar ist.
 
 ## Antwort an den Nutzer (Deutsch, einfach, kurz)
 
 - **Worum geht's?** (1–2 Sätze)
-- **Die wichtigsten Punkte** (Stichpunkte, mit Zeitmarken wie [03:20])
+- **Die wichtigsten Punkte** (Stichpunkte mit Zeitmarken wie [03:20])
 - **Fazit / Was du mitnehmen kannst**
-- Angebot: Fragen beantworten, Lernkarten, Quiz oder Übungsaufgaben (bei Uni-Stoff passende Skills wie
-  bauingenieur-dozent oder feynman-lernschleife nutzen).
+- Sagen, woher der Text stammt (YouTube-Untertitel manuell/automatisch oder Whisper) und anbieten:
+  Fragen beantworten, Lernkarten/Quiz, Bilder zu bestimmten Stellen.
 
 ## Regeln
 
-- Nur Inhalte aus Transkript/Beschreibung verwenden. **Nie** den Inhalt raten oder erfinden.
-- Automatische Untertitel enthalten Fehler (Fachbegriffe, Zahlen) – bei Unsicherheit darauf hinweisen.
-- Immer sagen, woher der Inhalt stammt (Transkript, nur Beschreibung, eingefügter Text).
+- Nur Inhalte aus Infos/Transkript/Bildern verwenden. **Nie** Inhalt erraten oder erfinden.
+- Automatische Untertitel und Whisper machen Fehler bei Fachbegriffen und Zahlen – bei Unsicherheit darauf hinweisen.
+- Lange Videos nie ungefragt komplett verarbeiten.
