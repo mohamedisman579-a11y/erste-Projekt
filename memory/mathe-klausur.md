@@ -34,7 +34,7 @@ Quelle: NotebookLM-Auswertung der Altklausuren (Stand 31.10.2026).
 - Leichter: Parabeln, Vektoren, Rang/Inverse → nur kurz wiederholen.
 
 ## Persönlicher Endspurt (Lektion = 50 Min. + 10 Min. Pause)
-Interaktive Checkliste + Pomodoro: Artifact „Mathe-Endspurt“.
+Interaktive Checkliste + Pomodoro: [Mathe-Endspurt](https://claude.ai/artifact/1MJMEMQJgrBFiv7pnhCtQS) (in der claude.ai-Seitenleiste angepinnt).
 
 **Sa 31.10., ca. 14–20:30 Uhr – Schema-Themen**
 1. 4×4-Determinante: Nullen erzeugen → Laplace → Sarrus (1 zusammen mit Claude, 1 allein)
