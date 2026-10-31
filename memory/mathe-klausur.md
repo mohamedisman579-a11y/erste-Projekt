@@ -1,6 +1,6 @@
 # Mathe-Klausur Ingenieurmathematik (1. Semester)
 
-**Klausur: Mo, 02.11.2026.** Ziel: 1,0. Hilfsmittel: 1 DIN-A4-Formelblatt.
+**Klausur: Mo, 02.11.2026.** Ziel: bestehen. Hilfsmittel: 1 DIN-A4-Formelblatt.
 Quelle: NotebookLM-Auswertung der Altklausuren (Stand 31.10.2026).
 
 ## Aufbau: 50 % Prof. Filz, 50 % Prof. Burckhardt / Beckötter
@@ -28,10 +28,36 @@ Quelle: NotebookLM-Auswertung der Altklausuren (Stand 31.10.2026).
 - Fehler-Register führen (Vorzeichen- und Leichtsinnsfehler).
 - In der Klausur: Aufgaben mit vielen Punkten zuerst (Extremwert, Determinante).
 
-## Endspurt
-- **Sa 31.10.:** Filz – Determinanten (mind. 3), Gauß-LGS, Vektoren
-- **So 01.11.:** Burckhardt – Exp-/Trig-Gleichungen, Parabel, Polynomdivision, danach 1 Probeklausur unter Zeitdruck
-- **Mo 02.11.:** nur Formelblatt anschauen, keine neuen Aufgaben
+## Über mich (Stand 31.10.)
+- Normal 15 h/Woche, vor der Klausur 5–6 h/Tag, lerne am besten **nachmittags/abends**.
+- Schwer: Extremwert + Trig, Determinanten + Gauß, Exp-Gleichungen/Polynomdivision/Umkehrfunktion.
+- Leichter: Parabeln, Vektoren, Rang/Inverse → nur kurz wiederholen.
+
+## Persönlicher Endspurt (Lektion = 50 Min. + 10 Min. Pause)
+Interaktive Checkliste + Pomodoro: Artifact „Mathe-Endspurt“.
+
+**Sa 31.10., ca. 14–20:30 Uhr – Schema-Themen**
+1. 4×4-Determinante: Nullen erzeugen → Laplace → Sarrus (1 zusammen mit Claude, 1 allein)
+2. 2 Determinanten allein, je max. 15 Min.
+3. Gauß 3×3: Treppenform + Probe durch Einsetzen (1 zusammen, 1 allein)
+4. 2 LGS allein, je max. 15 Min. + 1 Aufgabe Rang/Inverse (existiert A⁻¹? ⇔ det A ≠ 0)
+5. Exp-Gleichungen mit Substitution (2 Aufgaben)
+6. Polynomdivision + p-q-Formel (2 Aufgaben)
++ 30 Min. Abschluss: Fehler-Register + Formelblatt Teil Filz
+✅ Geschafft: 4 Determinanten/LGS ohne Hilfe richtig (je ≤ 15 Min.), 1 Rang/Inverse, 2 Exp-Gleichungen, 2 Polynomdivisionen; Formelblatt Filz fertig.
+
+**So 01.11., ca. 13:30–20 Uhr – Ansatz-Themen + Probeklausur**
+1. Extremwert-Schema: Skizze → Haupt- und Nebenbedingung → einsetzen → ableiten → Randwerte prüfen (zusammen)
+2. 2 Extremwertaufgaben allein (z. B. Dachgeschoss, Zylinder in Kugel)
+3. Trig: Additionstheoreme, Substitution u = sin x, alle Lösungen im verlangten Bereich (2 Aufgaben)
+4. Umkehrfunktion (1) + Schnellrunde Parabel aus Scheitelpunkt (1) + Vektoren/Skalarprodukt (1)
+5. Probeklausur am Stück ohne Pause, Zeit laut Deckblatt der Altklausur (laut NotebookLM 40 + 60 Min.)
+6. 30 Min. korrigieren, jeden Fehler ins Register, Formelblatt Teil Burckhardt
+✅ Geschafft: 2 Extremwert- + 2 Trig-Aufgaben allein richtig; Probeklausur in der Zeit gerechnet und korrigiert; Formelblatt komplett.
+⚠️ Notfallregel: Sitzt Extremwert nach Lektion 2 nicht → Schnellrunde (4) streichen, 3. Extremwertaufgabe rechnen.
+
+**Mo 02.11.:** Formelblatt + Fehler-Register 1× lesen, keine neuen Aufgaben. In der Klausur: Extremwert + Determinante zuerst.
+✅ Geschafft: ausgeschlafen, Formelblatt eingepackt, Register gelesen.
 
 ## Material
 - Rjasanowa: *Mathematik für Bauingenieure* (Hanser) · Wolf u. a.: *Ingenieurmathematik* (Hanser)

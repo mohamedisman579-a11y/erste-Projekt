@@ -1,0 +1,484 @@
+<title>Mathe-Endspurt</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: Karopapier-Heft. Links der Plan (Tage als Reiter), rechts Timer + Log, auf dem Handy untereinander. */
+:root {
+  --paper: #fbfcfe;
+  --grid: #e3e9f3;
+  --ink: #1b2433;
+  --muted: #5d6879;
+  --line: #d4dbe6;
+  --card: #ffffff;
+  --accent: #1f4fbf;      /* Füller-Blau */
+  --accent-soft: #e6edfb;
+  --red: #c4372b;         /* Korrekturstift */
+  --red-soft: #fbe9e7;
+  --green: #1f7a4a;
+  --green-soft: #e3f3ea;
+  --font-display: "Zilla Slab", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12161d; --grid: #1b212b; --ink: #e6eaf1; --muted: #9aa5b5; --line: #2c3442; --card: #181d26;
+    --accent: #7fa4ff; --accent-soft: #1d2a47; --red: #ff7d70; --red-soft: #3a1f1d; --green: #5fd197; --green-soft: #183326;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12161d; --grid: #1b212b; --ink: #e6eaf1; --muted: #9aa5b5; --line: #2c3442; --card: #181d26;
+  --accent: #7fa4ff; --accent-soft: #1d2a47; --red: #ff7d70; --red-soft: #3a1f1d; --green: #5fd197; --green-soft: #183326;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 24px;
+}
+header { display: grid; gap: 14px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 6vw, 48px); line-height: 1.05; margin: 0; text-wrap: balance; }
+h1 .det { color: var(--accent); }
+.sub { margin: 0; color: var(--muted); max-width: 62ch; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+.stat { display: flex; align-items: baseline; gap: 8px; }
+.stat b { font-family: var(--font-mono); font-size: 22px; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 14px; }
+.bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; flex: 1 1 200px; min-width: 120px; }
+.bar i { display: block; height: 100%; width: 0; background: var(--green); transition: width .3s; }
+.sync { font-size: 13px; color: var(--muted); }
+
+.cols { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .cols { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); align-items: start; } .side { position: sticky; top: calc(16px + env(safe-area-inset-top, 0px)); } }
+
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tab {
+  font: 600 15px var(--font-body); color: var(--muted);
+  background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+  padding: 7px 14px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center;
+}
+.tab small { font-family: var(--font-mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+.tab[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.tab:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.day { display: grid; gap: 14px; margin-top: 14px; }
+.dayhead { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.dayhead h2 { font-family: var(--font-display); font-size: 26px; margin: 0; }
+.dayhead p { margin: 0; color: var(--muted); }
+
+.lessons { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.lesson { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 12px; padding: 14px; border-top: 1px solid var(--line); align-items: start; }
+.lesson:first-child { border-top: 0; }
+.lesson .no { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.lesson label { display: grid; grid-template-columns: auto 1fr; gap: 10px; cursor: pointer; min-width: 0; }
+.lesson input[type=checkbox], .goal input[type=checkbox] { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--green); flex: none; }
+.lesson .t { font-weight: 600; }
+.lesson .d { color: var(--muted); font-size: 14.5px; }
+.lesson.done .t { text-decoration: line-through; text-decoration-color: var(--green); text-decoration-thickness: 2px; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.chip { font: 600 12px var(--font-mono); padding: 2px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
+.chip.weak { background: var(--red-soft); color: var(--red); }
+.chip.time { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+.go {
+  font: 600 13px var(--font-body); color: var(--accent); background: transparent;
+  border: 1px solid var(--accent); border-radius: 6px; padding: 5px 10px; cursor: pointer; white-space: nowrap;
+}
+.go:hover { background: var(--accent-soft); }
+
+.goals { background: var(--green-soft); border-radius: 10px; padding: 14px; display: grid; gap: 8px; }
+.goals h3, .note h3 { margin: 0; font: 700 13px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--green); }
+.goal { display: grid; grid-template-columns: auto 1fr; gap: 10px; cursor: pointer; }
+.note { border: 1.5px dashed var(--red); border-radius: 10px; padding: 12px 14px; color: var(--ink); }
+.note h3 { color: var(--red); margin-bottom: 4px; }
+.note p { margin: 0; }
+
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 14px; }
+.panel h2 { font-family: var(--font-display); font-size: 22px; margin: 0; }
+.field { display: grid; gap: 4px; }
+.field label { font-size: 13px; color: var(--muted); font-weight: 600; }
+input[type=text], textarea, select {
+  font: 16px var(--font-body); color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; width: 100%;
+}
+textarea { min-height: 78px; resize: vertical; }
+.clock { text-align: center; display: grid; gap: 4px; }
+.phase { font: 700 12px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.phase.pause { color: var(--green); }
+.time { font: 700 clamp(56px, 13vw, 76px) var(--font-mono); font-variant-numeric: tabular-nums; line-height: 1; }
+.ring { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.ring i { display: block; height: 100%; width: 0; background: var(--accent); }
+.ring.pause i { background: var(--green); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { font: 600 15px var(--font-body); border-radius: 8px; padding: 9px 14px; cursor: pointer; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--paper); flex: 1 1 140px; }
+.btn.small { font-size: 13px; padding: 5px 10px; }
+.done-box { border: 1.5px solid var(--green); background: var(--green-soft); border-radius: 10px; padding: 14px; display: grid; gap: 10px; }
+.done-box strong { color: var(--green); }
+
+.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-height: 420px; overflow-y: auto; }
+.entry { border-left: 3px solid var(--accent); padding: 6px 10px; background: var(--paper); border-radius: 0 6px 6px 0; display: grid; gap: 2px; }
+.entry .meta { display: flex; justify-content: space-between; gap: 8px; font: 500 12px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.entry .task { font-weight: 600; overflow-wrap: anywhere; }
+.entry .what { font-size: 14.5px; overflow-wrap: anywhere; white-space: pre-wrap; }
+.entry button { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 12px; padding: 0; }
+.entry button:hover { color: var(--red); }
+.empty { color: var(--muted); font-size: 14.5px; margin: 0; }
+.hint { font-size: 13px; color: var(--muted); margin: 0; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Ingenieurmathematik · 1. Semester · Klausur Mo 02.11.2026</div>
+    <h1>Mathe-<span class="det">Endspurt</span></h1>
+    <p class="sub">Dein Plan für die letzten zwei Tage: erst die Schema-Themen (Filz), dann die Ansatz-Themen (Burckhardt) und eine Probeklausur. Hake ab, was sitzt, und lerne mit dem Timer in 50-Minuten-Blöcken.</p>
+    <div class="stats">
+      <div class="stat"><b id="countdown">–</b><span>bis zur Klausur</span></div>
+      <div class="stat"><b id="pct">0 %</b><span>geschafft</span></div>
+      <div class="bar" aria-hidden="true"><i id="pctbar"></i></div>
+    </div>
+    <div class="sync" id="sync">Fortschritt wird geladen …</div>
+  </header>
+
+  <div class="cols">
+    <main>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div id="days"></div>
+    </main>
+
+    <aside class="side">
+      <section class="panel" aria-labelledby="timerH">
+        <h2 id="timerH">Pomodoro</h2>
+        <div class="field">
+          <label for="task">Woran arbeitest du?</label>
+          <input type="text" id="task" placeholder="z. B. 4×4-Determinante mit Laplace" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="mode">Rhythmus</label>
+          <select id="mode">
+            <option value="50-10">50 Min. lernen · 10 Min. Pause (Plan)</option>
+            <option value="25-5">25 Min. lernen · 5 Min. Pause</option>
+            <option value="15-3">15 Min. · 3 Min. (eine Aufgabe auf Zeit)</option>
+          </select>
+        </div>
+        <div class="clock">
+          <div class="phase" id="phase">Bereit</div>
+          <div class="time" id="time">50:00</div>
+          <div class="ring" id="ring"><i id="ringbar"></i></div>
+        </div>
+        <div class="row">
+          <button class="btn primary" id="startBtn" type="button">Start</button>
+          <button class="btn" id="resetBtn" type="button">Zurücksetzen</button>
+          <button class="btn" id="finishBtn" type="button">Jetzt eintragen</button>
+        </div>
+        <form class="done-box" id="doneForm" hidden>
+          <div><strong>Sitzung vorbei.</strong> Was hast du geschafft?</div>
+          <div class="field">
+            <label for="doneText">Kurz notieren (Fehler gleich mit!)</label>
+            <textarea id="doneText" placeholder="z. B. 2 Determinanten richtig, 1× Vorzeichenfehler bei Laplace"></textarea>
+          </div>
+          <div class="row">
+            <button class="btn primary" type="submit">Ins Log speichern</button>
+            <button class="btn" type="button" id="skipLog">Verwerfen</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="logH" style="margin-top:16px">
+        <div class="row" style="justify-content:space-between;align-items:center">
+          <h2 id="logH">Lern-Log</h2>
+          <button class="btn small" type="button" id="copyLog">Log kopieren</button>
+        </div>
+        <ul class="log" id="log"></ul>
+        <p class="hint" id="copyHint">Kopiere das Log und schick es Claude, dann bekommst du Feedback zu deinen Fehlern.</p>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<script>
+const PLAN = [
+  { id: "sa", tab: "Sa 31.10.", title: "Samstag · Schema-Themen", when: "ca. 14:00–20:30 Uhr · Teil Filz + Burckhardt-Rechenschemata",
+    lessons: [
+      { id: "sa1", t: "4×4-Determinante", d: "Nullen erzeugen → Laplace → Sarrus. 1 Aufgabe zusammen mit Claude, 1 allein.", chips: [["10 Pkt"],["Schwäche","weak"]], task: "4×4-Determinante (Laplace + Sarrus)" },
+      { id: "sa2", t: "2 Determinanten allein", d: "Jede max. 15 Minuten, ohne ins Skript zu schauen.", chips: [["10 Pkt"],["≤ 15 Min.","time"]], task: "2 Determinanten auf Zeit" },
+      { id: "sa3", t: "Gauß-Verfahren 3×3", d: "Treppenform, dann Probe durch Einsetzen. 1 zusammen, 1 allein.", chips: [["9–10 Pkt"],["Schwäche","weak"]], task: "LGS mit Gauß + Probe" },
+      { id: "sa4", t: "2 LGS allein + Rang/Inverse", d: "LGS je max. 15 Minuten. Dazu 1 Aufgabe: Existiert A⁻¹? (genau dann, wenn det A ≠ 0) und Rang bestimmen.", chips: [["5 Pkt Rang"],["≤ 15 Min.","time"]], task: "2 LGS auf Zeit + Rang/Inverse" },
+      { id: "sa5", t: "Exponentialgleichungen", d: "Substitution, z. B. e^(6x) − 6e^(3x) + 5 = 0 mit u = e^(3x). 2 Aufgaben.", chips: [["5–6 Pkt"],["Schwäche","weak"]], task: "Exp-Gleichungen mit Substitution" },
+      { id: "sa6", t: "Polynomdivision + p-q-Formel", d: "Nullstelle raten, dividieren, Restpolynom lösen, z. B. (x³+3x²+6x+4) : (x+1). 2 Aufgaben.", chips: [["Schwäche","weak"]], task: "Polynomdivision + p-q" },
+      { id: "sa7", t: "Abschluss (30 Min.)", d: "Fehler-Register schreiben und Formelblatt für Teil Filz fertig machen.", chips: [["Formelblatt","time"]], task: "Fehler-Register + Formelblatt Filz" }
+    ],
+    goals: [
+      ["sag1", "4 Determinanten/LGS ohne Hilfe richtig, jede in ≤ 15 Min."],
+      ["sag2", "1 Rang/Inverse-Aufgabe, 2 Exp-Gleichungen und 2 Polynomdivisionen allein gelöst"],
+      ["sag3", "Formelblatt Teil Filz fertig"]
+    ]
+  },
+  { id: "so", tab: "So 01.11.", title: "Sonntag · Ansatz-Themen + Probeklausur", when: "ca. 13:30–20:00 Uhr · Teil Burckhardt + Generalprobe",
+    lessons: [
+      { id: "so1", t: "Extremwert-Schema", d: "Skizze → Haupt- und Nebenbedingung → einsetzen → ableiten → Randwerte prüfen. Zusammen mit Claude.", chips: [["12–14 Pkt"],["Schwäche","weak"]], task: "Extremwertaufgabe: Schema" },
+      { id: "so2", t: "2 Extremwertaufgaben allein", d: "z. B. Rechteckraum im Dachgeschoss, Zylinder in Kugel.", chips: [["12–14 Pkt"],["Schwäche","weak"]], task: "2 Extremwertaufgaben allein" },
+      { id: "so3", t: "Trigonometrische Gleichungen", d: "Additionstheoreme, Substitution u = sin x, alle Lösungen im verlangten Bereich. 2 Aufgaben.", chips: [["5–8 Pkt"],["Schwäche","weak"]], task: "Trig-Gleichungen" },
+      { id: "so4", t: "Umkehrfunktion + Schnellrunde", d: "1 Umkehrfunktion (z. B. ⅓·ln(x²+6)), 1 Parabel aus Scheitelpunkt, 1 Vektoren/Skalarprodukt.", chips: [["4 + 8–11 + 10 Pkt"]], task: "Umkehrfunktion + Parabel + Vektoren" },
+      { id: "so5", t: "Probeklausur am Stück", d: "Ohne Pause, Zeit laut Deckblatt der Altklausur (laut NotebookLM 40 + 60 Min.). Formelblatt erlaubt, sonst nichts.", chips: [["Prüfungsbedingungen","time"]], task: "Probeklausur" },
+      { id: "so6", t: "Korrigieren (30 Min.)", d: "Jeden Fehler ins Register, Formelblatt Teil Burckhardt ergänzen.", chips: [["Formelblatt","time"]], task: "Probeklausur korrigieren" }
+    ],
+    note: "Sitzt Extremwert nach Lektion 2 noch nicht? Dann lass die Schnellrunde (4) weg und rechne eine dritte Extremwertaufgabe. Die bringt die meisten Punkte.",
+    goals: [
+      ["sog1", "2 Extremwert- und 2 Trig-Aufgaben allein richtig"],
+      ["sog2", "Probeklausur in der Zeit gerechnet und korrigiert"],
+      ["sog3", "Formelblatt komplett"]
+    ]
+  },
+  { id: "mo", tab: "Mo 02.11.", title: "Montag · Klausurtag", when: "Keine neuen Aufgaben mehr",
+    lessons: [
+      { id: "mo1", t: "Formelblatt + Fehler-Register lesen", d: "Einmal ruhig durchlesen, dann einpacken.", chips: [["15 Min.","time"]], task: "Formelblatt + Register lesen" },
+      { id: "mo2", t: "In der Klausur", d: "Erst die Aufgaben mit den meisten Punkten: Extremwert (12–14) und Determinante (10).", chips: [["Strategie"]], task: "" }
+    ],
+    goals: [
+      ["mog1", "Ausgeschlafen, Formelblatt eingepackt, Register gelesen"]
+    ]
+  }
+];
+
+const ALL_IDS = PLAN.flatMap(d => [...d.lessons.map(l => l.id), ...d.goals.map(g => g[0])]);
+let checked = {};
+let logItems = [];
+let db = null;
+
+/* ---------- storage: db if available, localStorage otherwise ---------- */
+function lsGet(k, fb) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch (e) { return fb; } }
+function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+const queues = {};
+function writeDoc(path, body) {
+  lsSet("me:" + path, body);
+  if (!db) return;
+  const q = queues[path] || (queues[path] = { busy: false, next: null });
+  q.next = body;
+  if (q.busy) return;
+  (async function drain() {
+    q.busy = true;
+    while (q.next) {
+      const b = q.next; q.next = null;
+      try { await db.doc(path).set(b); setSync("Gespeichert. Dein Fortschritt ist auf allen Geräten gleich."); }
+      catch (e) { setSync("Speichern hat nicht geklappt (" + (e && e.code || "Fehler") + "). Lokal ist alles da, versuch es später noch mal."); }
+    }
+    q.busy = false;
+  })();
+}
+function setSync(t) { document.getElementById("sync").textContent = t; }
+
+/* ---------- render plan ---------- */
+let activeDay = lsGet("me:tab", null) || defaultDay();
+function defaultDay() {
+  const d = new Date(); const ymd = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+  if (ymd >= 20261102) return "mo"; if (ymd === 20261101) return "so"; return "sa";
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function renderTabs() {
+  const el = document.getElementById("tabs");
+  el.innerHTML = PLAN.map(d => {
+    const ids = [...d.lessons.map(l => l.id), ...d.goals.map(g => g[0])];
+    const n = ids.filter(i => checked[i]).length;
+    return `<button class="tab" role="tab" id="tab-${d.id}" aria-selected="${d.id === activeDay}" aria-controls="day-${d.id}" data-day="${d.id}">${esc(d.tab)} <small>${n}/${ids.length}</small></button>`;
+  }).join("");
+}
+function renderDays() {
+  const el = document.getElementById("days");
+  el.innerHTML = PLAN.map(d => `
+    <section class="day" id="day-${d.id}" role="tabpanel" aria-labelledby="tab-${d.id}" ${d.id === activeDay ? "" : "hidden"}>
+      <div class="dayhead"><h2>${esc(d.title)}</h2><p>${esc(d.when)}</p></div>
+      <ol class="lessons">
+        ${d.lessons.map((l, i) => `
+          <li class="lesson ${checked[l.id] ? "done" : ""}">
+            <label for="cb-${l.id}">
+              <input type="checkbox" id="cb-${l.id}" data-id="${l.id}" ${checked[l.id] ? "checked" : ""}>
+              <span><span class="no">Lektion ${i + 1}</span><br><span class="t">${esc(l.t)}</span><br><span class="d">${esc(l.d)}</span>
+              <span class="chips">${l.chips.map(c => `<span class="chip ${c[1] || ""}">${esc(c[0])}</span>`).join("")}</span></span>
+            </label>
+            <span></span>
+            ${l.task ? `<button class="go" type="button" data-task="${esc(l.task)}">Timer ▸</button>` : "<span></span>"}
+          </li>`).join("")}
+      </ol>
+      ${d.note ? `<div class="note"><h3>Notfallregel</h3><p>${esc(d.note)}</p></div>` : ""}
+      <div class="goals"><h3>Geschafft, wenn …</h3>
+        ${d.goals.map(g => `<label class="goal" for="cb-${g[0]}"><input type="checkbox" id="cb-${g[0]}" data-id="${g[0]}" ${checked[g[0]] ? "checked" : ""}><span>${esc(g[1])}</span></label>`).join("")}
+      </div>
+    </section>`).join("");
+}
+function renderProgress() {
+  const n = ALL_IDS.filter(i => checked[i]).length;
+  const p = Math.round(n / ALL_IDS.length * 100);
+  document.getElementById("pct").textContent = p + " %";
+  document.getElementById("pctbar").style.width = p + "%";
+}
+function renderAll() { renderTabs(); renderDays(); renderProgress(); }
+
+document.getElementById("tabs").addEventListener("click", e => {
+  const b = e.target.closest(".tab"); if (!b) return;
+  activeDay = b.dataset.day; lsSet("me:tab", activeDay); renderTabs();
+  PLAN.forEach(d => { document.getElementById("day-" + d.id).hidden = d.id !== activeDay; });
+});
+document.getElementById("days").addEventListener("change", e => {
+  const id = e.target.dataset && e.target.dataset.id; if (!id) return;
+  if (e.target.checked) checked[id] = true; else delete checked[id];
+  const li = e.target.closest(".lesson"); if (li) li.classList.toggle("done", e.target.checked);
+  renderTabs(); renderProgress();
+  writeDoc("plan/progress", { checked, updatedAt: new Date().toISOString() });
+});
+document.getElementById("days").addEventListener("click", e => {
+  const b = e.target.closest(".go"); if (!b) return;
+  document.getElementById("task").value = b.dataset.task;
+  saveTimer();
+  document.getElementById("timerH").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+/* ---------- countdown ---------- */
+function renderCountdown() {
+  const exam = new Date(2026, 10, 2, 8, 0, 0);
+  const ms = exam - new Date();
+  const el = document.getElementById("countdown");
+  if (ms <= 0) { el.textContent = "Heute!"; return; }
+  const h = Math.floor(ms / 3600000);
+  el.textContent = h >= 24 ? `${Math.floor(h / 24)} T ${h % 24} Std.` : `${h} Std.`;
+}
+renderCountdown(); setInterval(renderCountdown, 60000);
+
+/* ---------- pomodoro ---------- */
+const T = lsGet("me:timer", null) || { phase: "idle", mode: "50-10", endAt: 0, left: 50 * 60, total: 50 * 60, task: "", startedAt: null };
+const $ = id => document.getElementById(id);
+$("mode").value = T.mode; $("task").value = T.task || "";
+function mins(mode, which) { const [w, p] = mode.split("-").map(Number); return (which === "work" ? w : p) * 60; }
+function saveTimer() { T.task = $("task").value; if (T.phase === "idle") T.mode = $("mode").value; lsSet("me:timer", T); }
+function workedMs() { return (T.worked || 0) + (T.segStart ? Date.now() - T.segStart : 0); }
+function remaining() { return T.endAt ? Math.max(0, Math.round((T.endAt - Date.now()) / 1000)) : T.left; }
+function fmt(s) { return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
+let audioCtx = null;
+function beep() {
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    [0, 0.35, 0.7].forEach(t => {
+      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.frequency.value = 880; g.gain.value = 0.15; o.connect(g); g.connect(audioCtx.destination);
+      o.start(audioCtx.currentTime + t); o.stop(audioCtx.currentTime + t + 0.2);
+    });
+  } catch (e) {}
+}
+function tick() {
+  const s = remaining();
+  $("time").textContent = fmt(s);
+  const pause = T.phase.startsWith("pause");
+  $("phase").textContent = { idle: "Bereit", work: "Lernen", workPaused: "Angehalten", pause: "Pause", pausePaused: "Pause angehalten" }[T.phase];
+  $("phase").classList.toggle("pause", pause);
+  $("ring").classList.toggle("pause", pause);
+  $("ringbar").style.width = (T.total ? (1 - s / T.total) * 100 : 0) + "%";
+  $("mode").disabled = T.phase !== "idle";
+  $("startBtn").textContent = (T.phase === "work" || T.phase === "pause") ? "Anhalten" : (T.phase === "idle" ? "Start" : "Weiter");
+  document.title = (T.phase === "work" || T.phase === "pause") ? fmt(s) + " · Mathe-Endspurt" : "Mathe-Endspurt";
+  if (s === 0 && T.endAt) {
+    T.endAt = 0;
+    if (T.phase === "work") { beep(); openDone(); T.phase = "pause"; T.total = mins(T.mode, "pause"); T.endAt = Date.now() + T.total * 1000; }
+    else if (T.phase === "pause") { beep(); T.phase = "idle"; T.total = T.left = mins(T.mode, "work"); }
+    saveTimer();
+  }
+}
+setInterval(tick, 500);
+$("startBtn").addEventListener("click", () => {
+  try { audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {}
+  if (T.phase === "idle") { T.mode = $("mode").value; T.phase = "work"; T.total = mins(T.mode, "work"); T.startedAt = new Date().toISOString(); T.worked = 0; T.segStart = Date.now(); T.endAt = Date.now() + T.total * 1000; }
+  else if (T.phase === "work" || T.phase === "pause") { if (T.phase === "work") { T.worked = workedMs(); T.segStart = 0; } T.left = Math.max(1, remaining()); T.endAt = 0; T.phase += "Paused"; }
+  else { T.phase = T.phase.replace("Paused", ""); if (T.phase === "work") T.segStart = Date.now(); T.endAt = Date.now() + T.left * 1000; }
+  saveTimer(); tick();
+});
+$("resetBtn").addEventListener("click", () => { T.phase = "idle"; T.worked = 0; T.segStart = 0; T.endAt = 0; T.total = T.left = mins($("mode").value, "work"); saveTimer(); tick(); });
+$("mode").addEventListener("change", () => { if (T.phase === "idle") { T.total = T.left = mins($("mode").value, "work"); } saveTimer(); tick(); });
+$("task").addEventListener("input", saveTimer);
+$("finishBtn").addEventListener("click", () => {
+  openDone();
+  if (T.phase.startsWith("work")) { T.phase = "idle"; T.endAt = 0; T.worked = 0; T.segStart = 0; T.total = T.left = mins(T.mode, "work"); saveTimer(); }
+  tick();
+});
+let pendingMinutes = 0;
+function openDone() {
+  const ms = T.startedAt ? workedMs() : 0;
+  pendingMinutes = ms ? Math.min(mins(T.mode, "work") / 60, Math.max(1, Math.round(ms / 60000))) : 0;
+  T.worked = 0; T.segStart = 0;
+  $("doneForm").hidden = false; $("doneText").focus();
+}
+$("skipLog").addEventListener("click", () => { $("doneForm").hidden = true; $("doneText").value = ""; T.startedAt = null; saveTimer(); });
+$("doneForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const what = $("doneText").value.trim();
+  logItems = [{ at: new Date().toISOString(), task: $("task").value.trim() || "Ohne Thema", what: what || "–", min: pendingMinutes }, ...logItems].slice(0, 300);
+  writeDoc("log/entries", { items: logItems });
+  $("doneText").value = ""; $("doneForm").hidden = true; T.startedAt = null; saveTimer();
+  renderLog();
+});
+
+/* ---------- log ---------- */
+function renderLog() {
+  const el = $("log");
+  if (!logItems.length) { el.innerHTML = `<li class="empty">Noch keine Sitzung. Starte den Timer, nach 50 Minuten trägst du hier ein, was du geschafft hast.</li>`; return; }
+  el.innerHTML = logItems.map((x, i) => {
+    const d = new Date(x.at);
+    const when = d.toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" }) + " " + d.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+    return `<li class="entry"><div class="meta"><span>${esc(when)}${x.min ? " · " + x.min + " Min." : ""}</span><button type="button" data-del="${i}" aria-label="Eintrag löschen">löschen</button></div>
+      <div class="task">${esc(x.task)}</div><div class="what">${esc(x.what)}</div></li>`;
+  }).join("");
+}
+$("log").addEventListener("click", e => {
+  const b = e.target.closest("[data-del]"); if (!b) return;
+  if (b.dataset.armed !== "1") { b.dataset.armed = "1"; b.textContent = "wirklich löschen?"; return; }
+  logItems.splice(Number(b.dataset.del), 1);
+  writeDoc("log/entries", { items: logItems }); renderLog();
+});
+$("copyLog").addEventListener("click", async () => {
+  const txt = "Mein Lern-Log (Mathe-Endspurt):\n" + logItems.slice().reverse().map(x =>
+    `- ${new Date(x.at).toLocaleString("de-DE", { weekday: "short", hour: "2-digit", minute: "2-digit" })} | ${x.task}${x.min ? " (" + x.min + " Min.)" : ""}: ${x.what}`).join("\n");
+  try { await navigator.clipboard.writeText(txt); $("copyHint").textContent = "Kopiert. Füg es im Chat bei Claude ein."; }
+  catch (e) { $("copyHint").textContent = txt; }
+});
+
+/* ---------- boot ---------- */
+checked = lsGet("me:plan/progress", { checked: {} }).checked || {};
+logItems = lsGet("me:log/entries", { items: [] }).items || [];
+renderAll(); renderLog(); tick();
+
+(async () => {
+  const timer = setTimeout(() => setSync("Server nicht erreichbar. Dein Fortschritt wird erstmal nur in diesem Browser gespeichert."), 10000);
+  try { db = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch (e) { db = null; }
+  if (!db) { clearTimeout(timer); setSync("Fortschritt wird in diesem Browser gespeichert."); return; }
+  let first = 2;
+  const done = () => { if (--first === 0) { clearTimeout(timer); setSync("Synchronisiert. Dein Fortschritt ist auf allen Geräten gleich."); } };
+  db.doc("plan/progress").onSnapshot(s => {
+    if (s.exists && !s.metadata.hasPendingWrites) { checked = Object.assign({}, (s.data() || {}).checked || {}); lsSet("me:plan/progress", { checked }); renderAll(); }
+    if (!s.metadata.fromCache) done();
+  }, err => { clearTimeout(timer); setSync("Sync unterbrochen (" + err.code + "). Lokal wird weiter gespeichert."); });
+  db.doc("log/entries").onSnapshot(s => {
+    if (s.exists && !s.metadata.hasPendingWrites) { logItems = ((s.data() || {}).items || []).slice(); lsSet("me:log/entries", { items: logItems }); renderLog(); }
+    if (!s.metadata.fromCache) done();
+  }, err => { clearTimeout(timer); });
+})();
+</script>
