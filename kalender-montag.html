@@ -34,13 +34,14 @@
   .progress { height:10px; background:var(--way-bg); border-radius:99px; overflow:hidden; margin-bottom:6px; }
   .progress > div { height:100%; width:0; background:var(--food); transition:width .3s; }
   .pt { font-size:.85rem; color:var(--muted); margin-bottom:18px; }
-  .row { display:grid; grid-template-columns:78px 1fr; gap:10px; margin-bottom:10px; }
+  .row { display:grid; grid-template-columns:78px minmax(0,1fr); gap:10px; margin-bottom:10px; overflow-wrap:anywhere; }
   .time { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; padding-top:12px; font-size:.9rem; }
   .time small { display:block; color:var(--muted); font-weight:500; }
   .card { border-left:8px solid; border-radius:12px; padding:10px 12px; background:var(--card); }
   .card h2 { margin:0; font-size:1.02rem; display:flex; gap:8px; align-items:center; }
   .card h2 label { flex:1; cursor:pointer; }
-  .card input { width:20px; height:20px; accent-color:var(--food); }
+  .card input { width:24px; height:24px; accent-color:var(--food); flex:none; }
+  .card h2 label { padding:4px 0; }
   .card ul { margin:6px 0 0 4px; padding-left:18px; color:var(--text); font-size:.92rem; }
   .card p { margin:6px 0 0; font-size:.9rem; color:var(--muted); }
   .done h2 label { text-decoration:line-through; opacity:.6; }
@@ -54,7 +55,7 @@
   .note { margin-top:22px; padding:12px 14px; border-radius:12px; background:var(--card); font-size:.9rem; }
   .note h3 { margin:0 0 6px; font-size:1rem; }
   .note ul { margin:0; padding-left:18px; }
-  @media (max-width:420px){ .row{grid-template-columns:62px 1fr;} }
+  @media (max-width:420px){ .row{grid-template-columns:62px minmax(0,1fr);} }
 </style>
 </head>
 <body>
@@ -80,10 +81,12 @@
   <div class="note">
     <h3>Ehrliche Einschätzung</h3>
     <ul>
-      <li>Der Tag ist lang (06:30 bis 22:30). Wenn du zu müde bist, streiche zuerst Lernblock 2 (Mechanik) und mach ihn am Dienstag.</li>
-      <li>Nicht streichen: Uni, Training und die zwei kurzen Spaziergänge.</li>
+      <li><b>Realistisch? Nur knapp.</b> Du bist 16,5 Stunden wach (06:30 bis 23:00), davon ca. 12 Stunden unterwegs oder an der Uni, und trainierst und lernst danach noch 2 Stunden. Das geht an einem Tag, aber nicht jeden Tag.</li>
+      <li>Wenn du zu müde bist, streichst du in dieser Reihenfolge: 1. Lernblock 2 (Mechanik) auf Dienstag verschieben, 2. Lernblock 1 auf 45 Minuten kürzen, 3. Spaziergang nach dem Abendessen auf 5 Minuten. Dann ins Bett um ca. 22:00.</li>
+      <li>Nicht streichen: Uni, Training und der Spaziergang nach dem Mittagessen.</li>
+      <li>Schritte: Zwei Spaziergänge mit je 10 Minuten bringen nur ca. 2.000 Schritte. Die Wege (Bahn, Uni-Gelände, Studio) kommen dazu. Miss heute deinen Wert mit dem Handy und steigere ihn schrittweise um 2.000.</li>
       <li>Ohne Frühstück und mit seltenem Abendessen: Achte darauf, beim Mittag- und Abendessen genug Protein zu bekommen.</li>
-      <li>Kreatin ist noch nicht gekauft: Einkauf steht im Plan, Einnahme erst ab dem Kauf.</li>
+      <li>Kreatin ist noch nicht gekauft: Kauf auf dem Heimweg, Einnahme erst ab dem Kauf.</li>
     </ul>
   </div>
 </main>
@@ -94,31 +97,37 @@ const items = [
   {t:"08:00", e:"09:00", c:"way", title:"Fahrt zur Uni", sub:"Ca. 1 Stunde. Optional: Anki, 20 neue Karten Baustoffkunde, falls importiert."},
   {t:"09:00", e:"09:45", c:"rest", title:"Ankommen & Puffer", sub:"Sachen auspacken: Papier, Stifte, Taschenrechner, Geodreieck."},
   {t:"09:45", e:"13:00", c:"uni", title:"Ingenieurmathematik 1", sub:"Raum HID_E43, Beckötter / Filz. Nur Maker: kein Handy, mitschreiben."},
-  {t:"13:00", e:"14:00", c:"food", title:"Mittagessen", items:["Magere Proteinquelle + viel Gemüse (Volumen)","Sprudelwasser dazu"], sub:"Danach 10 Minuten gehen."},
+  {t:"13:00", e:"13:40", c:"food", title:"Mittagessen", items:["Magere Proteinquelle + viel Gemüse (Volumen)","Sprudelwasser dazu"], sub:"Danach 10 Minuten gehen."},
   {t:"13:40", e:"13:50", c:"walk", title:"Spaziergang 10 Min.", sub:"Schritte Richtung 8.000–10.000 für den Tag."},
+  {t:"13:50", e:"14:00", c:"way", title:"Wechsel zum Raum HID_210", sub:"Puffer, damit du pünktlich bist."},
   {t:"14:00", e:"17:15", c:"uni", title:"Darstellen", sub:"Raum HID_210, Reichelt."},
-  {t:"17:15", e:"18:15", c:"way", title:"Heimfahrt", sub:"Ca. 1 Stunde."},
+  {t:"17:15", e:"18:15", c:"way", title:"Fahrt (nach Hause oder direkt zum Studio)", sub:"Ca. 1 Stunde. Auf dem Weg: Kreatin-Monohydrat kaufen (Drogerie oder Apotheke). Eingenommen wird es erst ab dem Kauf, 5 g täglich."},
+  {t:"18:15", e:"18:30", c:"rest", title:"Umziehen & Weg zum Studio", sub:"Falls das Studio weit weg ist, sag mir die Wegzeit, dann schiebe ich alles."},
   {t:"18:30", e:"19:15", c:"gym", title:"Training im Studio", items:[
     "Aufwärmen 5 Min.: Squat & Reach, Sumo Squat Hold",
     "Hauptübung mit Effective Reps: Zündsatz 8–12 Wdh. bis Versagen, 15–30 s Pause, Mini-Sätze bis 20 effektive Wdh.",
     "Zusatz: 1–2 Sätze Single-Leg RDL und Side-Lying Hip Abduction",
-    "Handy weg: nur Maker"], sub:"Welche Hauptübungen du heute machst, legen wir noch fest."},
-  {t:"19:15", e:"19:45", c:"food", title:"Abendessen", items:["Protein + Gemüse","Sprudelwasser"], sub:"Danach 10 Minuten gehen."},
-  {t:"19:45", e:"19:55", c:"walk", title:"Spaziergang 10 Min.", sub:"Kopf frei machen vor dem Lernen."},
-  {t:"20:00", e:"21:00", c:"learn", title:"Lernblock 1: Mathe", items:[
+    "Handy weg: voll auf den Satz konzentriert"], sub:"Welche Hauptübungen du heute machst, legen wir noch fest."},
+  {t:"19:15", e:"19:45", c:"rest", title:"Duschen & Heimweg", sub:"Falls du schon zu Hause trainierst oder das Studio nah ist, wird das kürzer."},
+  {t:"19:45", e:"20:15", c:"food", title:"Abendessen", items:["Protein + Gemüse","Sprudelwasser"], sub:"Später als dein üblicher Zeitraum 18–19 Uhr, weil das Training davor liegt. Danach 10 Minuten gehen."},
+  {t:"20:15", e:"20:25", c:"walk", title:"Spaziergang 10 Min.", sub:"Kopf frei machen vor dem Lernen."},
+  {t:"20:30", e:"21:30", c:"learn", title:"Lernblock 1: Mathe", items:[
     "Ausklammern und Substitution (Beckötter)","Gauß-Verfahren (Filz)",
     "Methode: Aufgabe erst allein lösen, dann Lösung vergleichen, Fehler benennen"], sub:"Wiederholen nach 1 Tag, 1 Woche, 3 Wochen."},
-  {t:"21:00", e:"21:15", c:"rest", title:"Pause", sub:"Wasser, bewegen, kein Handy-Scrollen."},
-  {t:"21:15", e:"22:15", c:"learn", title:"Lernblock 2: Mechanik", items:[
+  {t:"21:30", e:"21:45", c:"rest", title:"Pause", sub:"Wasser, bewegen, kein Handy-Scrollen."},
+  {t:"21:45", e:"22:45", c:"learn", title:"Lernblock 2: Mechanik", items:[
     "Kraft in zwei Wirkungslinien zerlegen, mit Geodreieck zeichnen",
     "Beispiel: F = 5 kN, aF = 315°, a1 = 220°, a2 = 340°",
     "Offen: F1/F2 messen, Winkel d, Sinussatz, Kosinussatz"], sub:"Erst selbst zeichnen, dann Ergebnis prüfen (F1 ca. 2,44 kN, F2 ca. 5,75 kN)."},
-  {t:"22:15", e:"22:30", c:"rest", title:"Runterfahren & Tasche für morgen", sub:"Dienstag: Matheübung 08:00, Baustoffkunde 11:30."},
-  {t:"22:30", e:"", c:"rest", title:"Schlafen", sub:"Ca. 8 Stunden bis 06:30."}
+  {t:"22:45", e:"23:00", c:"rest", title:"Runterfahren & Tasche für morgen", sub:"Dienstag: Matheübung 08:00, Baustoffkunde 11:30."},
+  {t:"23:00", e:"", c:"rest", title:"Schlafen", sub:"Ca. 7,5 Stunden bis 06:30."}
 ];
 const key = "kalender-montag-2026-11-02";
 let state = {};
-try { state = JSON.parse(localStorage.getItem(key) || "{}"); } catch(e) {}
+try {
+  const s = JSON.parse(localStorage.getItem(key) || "{}");
+  if (s && typeof s === "object" && !Array.isArray(s)) state = s;
+} catch(e) {}
 const list = document.getElementById("list");
 function save(){ try { localStorage.setItem(key, JSON.stringify(state)); } catch(e) {} }
 function render(){
