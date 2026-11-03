@@ -15,7 +15,7 @@
 ## 1.1 Einführung
 
 ### Karte 1
-**Frage:** Welche vier Gruppen von Anforderungen an Baustoffe gibt es? Nenne jeweils passende Eigenschaften.
+**Frage:** Welche **drei** Anforderungen an Baustoffe gibt es? Nenne jeweils passende Eigenschaften.
 
 **Antwort:**
 1. **Technische Einsetzbarkeit**
@@ -23,8 +23,24 @@
    - Feuerwiderstand: Entflammbarkeit, Brennbarkeit, Toxizität, Hochtemperaturverhalten
    - Physikalisch-chemisches Verhalten: Dichte; wärme-, feuchte-, schall- und lichttechnisches Verhalten; Korrosionsbeständigkeit; elektrisches und magnetisches Verhalten
 2. **Form- und Fügbarkeit:** Gießbarkeit, Formbarkeit, Verarbeitbarkeit, Gestaltbarkeit, Schweißbarkeit, Klebbarkeit
-3. **Wirtschaftlichkeit:** kostengünstig zu gewinnen, herzustellen und zu formen; möglichst wiederverwertbar
-4. **Umwelt:** geringe Umweltbelastung bei Gewinnung und Herstellung
+3. **Wirtschaftlichkeit:** kostengünstige Gewinnbarkeit, Herstell- und Formbarkeit, mögliche Wiederverwertbarkeit, geringe Umweltbelastung bei Gewinnung und Herstellung
+
+---
+
+### Karte 1b
+**Frage:** Welche Einflüsse wirken auf Planung und Ausführung eines Bauwerks („Zur Rolle beim Planen und Bauen“)?
+
+**Antwort:** Laut Folie (Rostásy) fließen in Planung und Ausführung ein:
+- Nutzeranforderungen zur Funktion
+- Gestaltung
+- Bauvorschriften
+- Baukosten und Unterhaltung
+- Umwelt
+- Tragwerk
+- **Baustoffe**
+- Bauphysik
+- Herstelltechnik
+- technischer Ausbau
 
 ---
 
@@ -233,7 +249,7 @@ Merkschema: Bauprodukt → (Bauart) → bauliche Anlage.
 2. **ÜHP:** Übereinstimmungserklärung des Herstellers nach vorheriger **Prüfung** durch eine anerkannte Prüfstelle
 3. **ÜH:** Übereinstimmungserklärung des **Herstellers** allein
 
-Beispiele aus MVV TB C 2: Beton nach DIN 1045-2 → ÜZ; Betonfenster → ÜZ; statisch nicht mitwirkende Ziegel für Decken → ÜHP.
+Beispiele aus MVV TB C 2: Beton nach DIN 1045-2 → ÜZ; Betonfenster → ÜZ; **statisch mitwirkende** Ziegel für Decken → ÜZ; **statisch nicht mitwirkende** Ziegel für Decken → ÜHP.
 
 ---
 
@@ -341,6 +357,19 @@ Hintergrund: Die BPR hatte 6 „Wesentliche Anforderungen“. Die BauPVO nennt s
 
 Die Strenge nimmt von 1+ nach 4 ab.
 
+**Aufgaben des Herstellers:**
+- **System 1+ und 1:** werkseigene Produktionskontrolle (WPK) und zusätzliche Prüfung von Proben aus dem Werk nach festgelegtem Prüfplan
+- **System 2+:** Erstprüfung des Produkts (Feststellung des Produkttyps), WPK und Prüfung von Werksproben nach Prüfplan
+- **System 3:** WPK und Probenahme für die Erstprüfung
+- **System 4:** Erstprüfung des Produkts und WPK, alles selbst
+
+**Art der Bescheinigung:**
+- System 1+ und 1: **Bescheinigung der Leistungsbeständigkeit** (produktbezogen)
+- System 2+: **Bescheinigung der Konformität der WPK** (werksbezogen)
+- System 3 und 4: keine
+
+**Dokumentation in allen Systemen:** die **Leistungserklärung** des Herstellers zu den Wesentlichen Merkmalen. Sie ist Voraussetzung für die CE-Kennzeichnung.
+
 ---
 
 ### Karte 29
@@ -402,6 +431,45 @@ Die Strenge nimmt von 1+ nach 4 ab.
 - **1045-4:** Betonfertigteile, allgemeine Regeln
 - **1045-40:** Regeln für Betonfertigteile ohne spezifische Norm
 - **1045-41:** Anforderungen für die Verwendung von Betonfertigteilen in baulichen Anlagen
+
+---
+
+### Karte 33b
+**Frage:** Nenne Produktnormen für Ausgangsstoffe von Beton.
+
+**Antwort:**
+- DIN EN 197: Zement
+- DIN 1164: Zement mit besonderen Eigenschaften
+- DIN EN 1008: Zugabewasser für Beton
+- DIN EN 12620: Gesteinskörnung für Beton
+- DIN EN 13055: leichte Gesteinskörnung
+- DIN 4226-100: rezyklierte Gesteinskörnung
+- DIN EN 450: Flugasche für Beton
+- DIN EN 934: Zusatzmittel für Beton, Mörtel und Einpressmörtel
+- DIN EN 13263: Silikastaub für Beton
+- DIN EN 12878: Pigmente für Beton
+- DIN EN 14889: Fasern für Beton
+
+---
+
+### Karte 33c
+**Frage:** Nenne Prüfnormen für Beton.
+
+**Antwort:**
+- DIN EN 12350-5: Ausbreitmaß
+- DIN EN 12350-6: Frischbetonrohdichte
+- DIN EN 12350-7: Luftgehalt (Druckverfahren)
+- DIN EN 12390-3: Druckfestigkeit von Probekörpern
+- DIN EN 12390-5: Biegezugfestigkeit von Probekörpern
+- DIN EN 12390-6: Spaltzugfestigkeit von Probekörpern
+- DIN EN 12390-7: Dichte von Beton
+- DIN EN 12390-8: Wassereindringtiefe unter Druck
+- DIN CEN/TS 12390-9: Frost- und Frost-Tausalz-Widerstand
+- DIN 1048-5: Elastizitätsmodul von Beton
+- DIN EN 12504-1: Bohrkernproben aus Bauwerken
+- DIN EN 12504-2: zerstörungsfreie Prüfungen am Bauwerk
+
+Merkhilfe: **12350** = Frischbeton, **12390** = Festbeton-Probekörper, **12504** = Prüfung am Bauwerk.
 
 ---
 
@@ -538,7 +606,9 @@ Tipp: Immer zuerst in dm umrechnen, dann ergibt kg/dm³ · dm³ direkt kg.
 **Antwort:**
 - **Mikroporen:** Ø < 10⁻⁷ m
 - **Kapillarporen:** 10⁻⁷ m ≤ Ø < 10⁻³ m
-- **Makroporen:** Ø ab 10⁻³ m (= 1 mm). Auf der Folie steht „≤ 10⁻³ m“; gemeint ist der Anschluss an die Kapillarporen, also **≥ 10⁻³ m**.
+- **Makroporen:** Ø ≤ 10⁻³ m (so steht es auf der Folie)
+
+Hinweis: Logisch schließen die Makroporen an die Kapillarporen an, gemeint ist also Ø ≥ 10⁻³ m (≥ 1 mm). Schreib in der Klausur am besten die Folienangabe hin und frag im Zweifel nach.
 
 ---
 
@@ -554,7 +624,7 @@ Tipp: Immer zuerst in dm umrechnen, dann ergibt kg/dm³ · dm³ direkt kg.
 - Frostwiderstand
 - Wärmeleitfähigkeit
 
-Mehr Poren bedeuten i. d. R. geringere Rohdichte, Festigkeit und geringeren E-Modul, kleineres λ (bessere Dämmung) und leichteres Eindringen von Stoffen.
+Belegt in Kap. 4: mehr Poren → kleinere Rohdichte → kleineres λ (bessere Wärmedämmung).
 
 ---
 
@@ -583,6 +653,8 @@ Spannungen entstehen aus
 - **Lastspannungen:** Eigengewicht, Nutz- oder Verkehrslast, Wind usw.
 - **Zwangsspannungen:** z. B. durch behinderte Verformung oder Setzungen
 - **Eigenspannungen:** z. B. durch Temperaturänderungen, Schwinden, Quellen
+
+Folienbeispiele: **Zwang** entsteht, wenn die freie Verformung behindert wird (z. B. ein beidseitig eingespanntes Bauteil). **Eigenspannung** entsteht z. B. durch eine Temperaturänderung im Bauteil.
 
 ---
 
@@ -688,7 +760,8 @@ Man unterscheidet **linear-elastisches** Verhalten (gerade σ-ε-Linie, Hooke) u
 - Hooke 1678: *„ut tensio sic vis“*, also „wie die Dehnung, so die Kraft“
 - Spannung und Dehnung sind **proportional**. Die σ-ε-Linie ist eine **Gerade**, ihre Steigung ist der E-Modul (E = Δσ/Δε = tan α).
 - Es gilt für **linear-elastisches** Verhalten, also nur bis zur **Elastizitätsgrenze** (Proportionalitätsbereich). Die Verformungen sind reversibel.
-- Werkstoffe: **Stahl** (im elastischen Bereich bis σ_E), **Glas**, Elastomere (laut Folie elastisch), außerdem Aluminium und Holz (lineare Teilstücke der σ-ε-Linien). Bei **Beton** gilt es nur näherungsweise im unteren Lastbereich.
+- Werkstoffe (lineare Teilstücke der σ-ε-Linien auf der Folie): **Stahl** (bis zur Elastizitätsgrenze σ_E), **Glas**, **Aluminium**, **Holz**, **Beton**.
+- Achtung: **Elastomere bzw. Gummi** sind zwar **elastisch**, ihre σ-ε-Linie ist aber **nichtlinear** (Folie „Polymere“). Für sie gilt Hooke **nicht**. Elastisch heißt nicht automatisch linear-elastisch!
 
 ---
 
@@ -743,9 +816,9 @@ Dabei ist τ die Schubspannung, γ die Gleitung (Schubverzerrung, Winkel) und µ
 | Nach Entlastung | geht vollständig in die Ausgangsform zurück | **bleibende** Verformung |
 | Verformung | reversibel | irreversibel |
 | Wann? | unterhalb der Elastizitätsgrenze | nach Überschreiten der Fließgrenze |
-| Gesetz | Hooke σ = E · ε (bei linear-elastisch) | kein Hooke; Fließen bei etwa konstanter Spannung (ideal plastisch) |
-| Energie | gespeichert, wird zurückgegeben | wird verbraucht (Reibung, Gleiten) |
-| Beispiele | Glas, Elastomere, Stahl bis σ_E | Stahl nach der Fließgrenze (Fließplateau), Metalle, viele Kunststoffe |
+| Gesetz | Hooke σ = E · ε (bei linear-elastisch) | kein Hooke; Fließen auf dem Fließplateau (ideal elastisch-plastisch) |
+| Modell | Feder | St. Venant'scher Gleitreibungskörper (Feder + Reibklotz) |
+| Beispiele | Elastomere, Glas, Stahl bis σ_E | Stahl nach der Fließgrenze (Fließplateau), zähe Metalle |
 
 In beiden Fällen ist die Verformung **zeitunabhängig**, anders als bei der Viskoelastizität.
 
@@ -851,7 +924,7 @@ Beide sind viskoelastisch, zeit- und temperaturabhängig.
 **Spröder Bruch:**
 1. **Trennbruch:** Die Bruchfläche liegt **senkrecht zur Zugrichtung** (quer durch den Stab), ohne Einschnürung. Die Probe bleibt außer am Bruch unverformt. Beispiele: Glas, Beton, Porzellan.
    Skizze: Rechteck mit **waagrechter** (leicht zackiger) Bruchlinie.
-2. **Scherbruch:** Die Bruchfläche verläuft **schräg** (etwa unter 45°, Schubspannung maximal), ohne Einschnürung.
+2. **Scherbruch:** Die Bruchfläche verläuft **schräg** zur Zugrichtung, ohne Einschnürung (vgl. Schrägschnitt: dort wirkt Schubspannung τ = p · sin φ).
    Skizze: Rechteck mit **schräger** Bruchlinie.
 
 **Zäher Bruch:**
@@ -939,7 +1012,6 @@ Plausibel: Der Wert liegt im Bereich für Stahl (200–2.000 N/mm²).
 - **Zäh:** erst ebenfalls eine Gerade (elastisch), dann eine **gekrümmte Kurve** (plastisch), die bis zum **Maximum R** steigt. Danach **fällt** sie (Einschnürung) bis zum Bruch bei **großer Dehnung**. Die Reißspannung liegt **unter R**. Beispiel: Baustahl.
 - In beiden Fällen geht man bei Entlastung **parallel zur Anfangsgeraden** zurück.
 
-Merke: Die Fläche unter der Kurve (Arbeitsvermögen) ist beim zähen Stoff viel größer.
 
 ---
 
@@ -953,6 +1025,7 @@ Merke: Die Fläche unter der Kurve (Arbeitsvermögen) ist beim zähen Stoff viel
 - **σ_max bzw. β_Z:** Zugfestigkeit (Maximum der Kurve)
 - Dehnungen: bleibende Dehnung ε_b (plastisch), elastischer Anteil ε_el, Gleichmaßdehnung ε_u bei σ_max, max ε beim Zerreißen
 - Bei **Ent- und Wiederbelastung** verläuft die Linie **parallel zur Anfangsgeraden**.
+- **Nennspannung** σ = F / A₀ (bezogen auf den Ausgangsquerschnitt) gegenüber **wahrer Spannung** σ = F / A(t) (bezogen auf den aktuellen, durch Einschnürung kleineren Querschnitt). Die wahre Spannung steigt bis zum Zerreißen weiter an (gestrichelte Kurve), die Nennspannung fällt nach σ_max ab.
 
 ---
 
@@ -964,6 +1037,21 @@ Merke: Die Fläche unter der Kurve (Arbeitsvermögen) ist beim zähen Stoff viel
 - **Hochfeste Al-Legierung:** ≈ 500 N/mm², **kein Fließplateau** (stetiger Übergang). Bruchdehnung 5–10 %.
 - **Bronze:** stetig gekrümmte Kurve, duktil.
 - **Grauguss:** ≈ 150 N/mm², **spröde** (kaum Dehnung).
+
+---
+
+### Karte 77b
+**Frage:** Wie sehen die σ-ε-Linien von **Polymeren** (Gummi, PE) aus? Was zeigt das Vergleichsdiagramm mehrerer Werkstoffe?
+
+**Antwort:**
+- **Gummi:** flacher Anstieg, große Dehnung, am Ende steiler (**nichtlinear**)
+- **PE:** steiler Anstieg, dann ein **Fließbereich** mit langsam steigender Spannung bei großer Dehnung
+- **Vergleichsdiagramm** (Raumtemperatur, zügige Belastung; Glas und Beton auf Druck, die übrigen auf Zug):
+  - **Glas:** sehr steil, linear, über 400 N/mm² bei < 0,5 % Dehnung
+  - **Baustahl S235JR:** Fließgrenze ≈ 300 N/mm², dann Verfestigung bis > 350 N/mm² bei > 5 % Dehnung
+  - **GFK** (glasfaserverstärkter Kunststoff): hohe Festigkeit
+  - **Beton und Holz:** kleinere Festigkeiten bei kleiner Dehnung (≈ 1 %)
+  - **PMMA und PE:** niedrige Spannungen bei großen Dehnungen
 
 ---
 
@@ -1042,7 +1130,7 @@ Daraus folgt die Reihenfolge **β_BZ > β_SZ > β_Z** (Biegezug liefert die höc
 - Für die **Bemessung** ist die Dauerstandfestigkeit maßgebend: die Spannung, die **gerade noch beliebig lange** getragen wird.
 - Anhaltswerte:
   - **Stahl:** nahezu **100 %**
-  - **Beton** (Druck): ca. **85 %** der Kurzzeit-Prismendruckfestigkeit
+  - **Beton** (Druck): ca. **85 %** der Kurzzeit-Prismendruckfestigkeit. Im Diagramm fällt die Festigkeit mit zunehmender (logarithmisch aufgetragener) Belastungsdauer von 100 % auf ≈ 85 % ab.
   - **Holz** (Biegezug): ca. **50–60 %**
   - **Kunststoffe:** sehr verschieden, je nach Art und Klima, teils **deutlich unter 50 %**
 - Bei **Metallen** ist der Temperatureinfluss groß: Mit steigender Temperatur sinkt die Dauerstandfestigkeit, und die Verformungen nehmen stark zu.
@@ -1154,7 +1242,7 @@ Man unterscheidet den **sommerlichen** Wärmeschutz (gegen Überhitzung und Sonn
 2. **Konvektion:** Wärme wird durch strömende Teilchen einer **Flüssigkeit oder eines Gases** mitgeführt, entlang von Temperatur- und Dichteunterschieden. Sie ist **stoffgebunden** (nur in Flüssigkeiten und Gasen).
    - **erzwungen:** durch Ventilator oder Wind
    - **frei:** Strömung infolge von Dichteunterschieden
-3. **Wärmestrahlung:** Übertragung durch **elektromagnetische Wellen**, ausgehend von Oberflächen fester Körper. Sie ist **nicht stoffgebunden** (stoffunabhängig, geht auch durchs Vakuum). Der Austausch zwischen zwei Flächen hängt von Art, Temperatur und geometrischer Anordnung ab.
+3. **Wärmestrahlung:** Übertragung durch **elektromagnetische Wellen**, ausgehend von Oberflächen fester Körper. Sie ist **nicht stoffgebunden** (stoffunabhängig). Der Austausch zwischen zwei Flächen hängt von Art, Temperatur und geometrischer Anordnung ab.
 
 ---
 
@@ -1209,7 +1297,7 @@ Merke: Je kleiner λ, desto besser die Wärmedämmung bei gleicher Dicke.
 
 **Antwort:**
 - Das sind die Widerstände beim **Übergang** von der Bauteiloberfläche zur angrenzenden Luftschicht (innen bzw. außen). Durch sie ist die Oberflächentemperatur anders als die Lufttemperatur.
-- q_i = (θ_Li − θ_i) / R_si und q_a = (θ_a − θ_La) / R_sa. Ohne Wärmespeicherung gilt q_i = q_a = q.
+- q_i = (Θ_Li − Θ_i) / R_si und q_a = (Θ_La − Θ_a) / R_sa (Schreibweise wie auf der Folie). Ohne Wärmespeicherung gilt q_i = q_a = q.
 - R_s ist **umso kleiner, je größer die Windgeschwindigkeit**. Er hängt außerdem von Oberflächenrauigkeit, Temperatur und Richtung des Wärmestroms (aufwärts, horizontal, abwärts) ab.
 - **R_sa = 0,04 m²K/W** (außen, mittlere Windgeschwindigkeit 2 m/s)
 - **R_si = 0,10–0,17 m²K/W** (innen, je nach Richtung des Wärmestroms)
@@ -1285,6 +1373,14 @@ R_si = 0,13 liegt im Folienbereich 0,10–0,17. Die Zahlen sind ausgedacht, dami
 - Kunststoffe 0,23 · Glas 0,80
 - Beton (ρ_R = 2,4) **2,1** · Stahlbeton (ρ_R = 2,5) 2,33 · gefügedichter Leichtbeton 0,36–1,92
 - Metalle 50–400: **Stahl 60** · **Aluminium 299** · Kupfer 380
+- moderne Mauersteine mit Dämmmörtel (ρ_R = 0,35–0,60 kg/dm³): 0,065–0,13
+
+Weitere Bemessungswerte (Tabelle, ρ in kg/m³ → λ in W/(mK)):
+- Gipsmörtel 1700 → 0,70 · Kalkmörtel 1900 → 0,87 · Zementmörtel 2200 → 1,40
+- Normalbeton 2400 → 2,04 · Bimsbeton porig 800 → 0,29 · Gasbeton 600 → 0,23
+- Kalksandstein 1800 → 1,00 · Vollklinker 2000 → 0,96 · Vollziegel 1800 → 0,80 · Lochziegel 1200 → 0,52
+- Fichte 600 → 0,14 · mineralische Faserstoffe 100 → 0,04 · Schaumkunststoffe 25 → 0,04
+- Stahl 7850 → 58 · Aluminium 2700 → 168 · Blei 11300 → 35 · Kupfer 9000 → 370
 
 ---
 
@@ -1493,7 +1589,7 @@ Volumen:
 - **Metalle:** Stahl **10** · Kupfer 12 · Messing 19 · Aluminium 24 · Blei 30 · Zink 33
 - **Mineralisch:** Beton **10 (9–12)** · Porenbeton 6–8 · Bimsbeton 8–10 · Granit 5 · Sandstein 3 · Kalkstein 1,5 · Ziegel, Klinker, Fliesen 5–8 · Glas 8–9
 - **Holz:** ∥ Faser 3–10 · ⊥ Faser 25–60 (anisotrop!)
-- **Kunststoffe:** sehr groß, z. B. PVC hart 70–80, PE 200–230
+- **Kunststoffe:** sehr groß: PVC hart 70–80 · PVC weich 125–180 · PP 160–180 · PE 200–230 · PMMA 70–80 · PIB 70–80 · PS 60–80 · PA 70–120
 
 **Merke:** **Beton und Stahl haben fast gleiches α_T ≈ 10 · 10⁻⁶ 1/K.** Deshalb funktioniert **Stahlbeton**: Bei Temperaturänderung gibt es keine schädlichen Spannungen zwischen Stahl und Beton. Auf deinen Folien ist das handschriftlich notiert.
 
@@ -1560,7 +1656,7 @@ Rechnest du mit α_T = 12 · 10⁻⁶ 1/K wie im Folienbeispiel, ergibt sich ε_
 **Antwort:**
 - Wärmestrom: Φ = Q / t
 - Wärmestromdichte: q = Φ / A = λ · Δθ / d
-- Übergang: q_i = (θ_Li − θ_i) / R_si; q_a = (θ_a − θ_La) / R_sa
+- Übergang: q_i = (Θ_Li − Θ_i) / R_si; q_a = (Θ_La − Θ_a) / R_sa
 - Wärmedurchlasswiderstand: R = d / λ; mehrschichtig R = Σ d_i / λ_i
 - Wärmedurchgangswiderstand: R_T = R_si + Σ R + R_sa
 - U-Wert: U = 1 / R_T
