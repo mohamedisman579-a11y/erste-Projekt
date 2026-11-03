@@ -1,11 +1,11 @@
 # Baustoffkunde I – Karteikarten (Kapitel 1–4)
 
-**Quellen (nur diese):** Vorlesungsfolien Prof. Marquardt, HAWK – Kap. 1 Allgemeine Grundlagen · Kap. 2 Grundbegriffe und Einheiten · Kap. 3 Mechanisches Verhalten · Kap. 4 Verhalten gegenüber Wärme und Kälte · Übungsfragen Baustoffkunde I (Teile A, B, C).
+**Quellen (nur diese):** Vorlesungsfolien Prof. Marquardt, HAWK – Kap. 1 Allgemeine Grundlagen · Kap. 2 Grundbegriffe und Einheiten · Kap. 3 Mechanisches Verhalten · Kap. 4 Verhalten gegenüber Wärme und Kälte · Übungsfragen Baustoffkunde I (Teile A, B, C) · Altklausuren Baustoffkunde 1 vom 07.02.2024 und 30.07.2024 (nur Aufgaben zu Kap. 1–4).
 
 **So lernst du damit:** Frage lesen → laut oder auf Papier antworten → erst dann die Antwort lesen.
 ⭐ = Frage steht so (oder fast so) in den Übungsfragen, also wahrscheinlich klausurrelevant.
 🧮 = Rechenaufgabe: Rechenweg immer mit Formel, Einheiten und Ergebnissatz aufschreiben.
-📝 = Aufgabe aus den Altklausuren Feb 2024 / Juli 2024 (Teil 6). Diese Aufgaben kommen fast jedes Mal wieder dran!
+📝 = Aufgabe aus den Altklausuren Feb 2024 / Juli 2024 (Teil 6). Aufgaben 1–13 kamen in beiden Klausuren fast gleich dran.
 
 **Nicht enthalten:** Brandverhalten, Feuchte, Bindemittel und Beton (Übungsfragen D–G), weil ihr das in den Vorlesungen noch nicht gemacht habt.
 
@@ -1703,7 +1703,7 @@ Rechnest du mit α_T = 12 · 10⁻⁶ 1/K wie im Folienbeispiel, ergibt sich ε_
 
 # TEIL 6 – Altklausur-Aufgaben (Feb 2024 und Juli 2024)
 
-Diese Aufgaben kamen in **beiden** Klausuren fast gleich dran, nur mit anderen Zahlen. Rechne bei 🧮 beide Varianten durch.
+Die Aufgaben 1–13 kamen in **beiden** Klausuren fast gleich dran, nur mit anderen Zahlen. Rechne bei 🧮 beide Varianten durch. Die Aufgaben 39–41 sind aus der Feb-Klausur (im Juli-Scan fehlen diese Seiten).
 
 ### Karte 130 📝
 **Frage:** (Altklausur Aufg. 1, 3 Pkt.) Baustoffe lassen sich in Metalle, anorganisch-nichtmetallische und organische Baustoffe einteilen. Nenne für jede Gruppe zwei Baustoffe.
@@ -1790,7 +1790,7 @@ b) ρ_R ≈ 7,85 kg/dm³ ist die Rohdichte von **Stahl**.
 - **a) Spröde:** steile **Gerade** (E = tan α) bis zum **plötzlichen Bruch bei kleiner Dehnung**. Es gibt keine plastische Verformung, und der Bruch kündigt sich nicht an. Die Reißspannung σ_R ist gleich der Festigkeit R. Beispiele: Glas, Beton.
 - **b) Zäh:** erst eine Gerade (elastisch), dann eine **gekrümmte Kurve** (plastisch) bis zum **Maximum R**. Danach fällt sie (Einschnürung) bis zum Bruch bei **großer Dehnung**. Die Reißspannung liegt **unter R**, der Bruch kündigt sich an. Beispiel: Baustahl.
 
-Zeichne beide Kurven in **ein** Diagramm und beschrifte Festigkeit R und Reißspannung σ_R. So steht es auf der Folie, und so wurde in der Korrektur volle Punktzahl vergeben.
+Zeichne beide Kurven in **ein** Diagramm und beschrifte Festigkeit R und Reißspannung σ_R, so wie auf der Folie. In der Juli-Klausur gab es für diese Aufgabe 3 von 3 Punkten.
 
 ---
 
@@ -1811,7 +1811,7 @@ Zeichne beide Kurven in **ein** Diagramm und beschrifte Festigkeit R und Reißsp
 
 Kriechzahl: φ = ε_k / ε_el
 
-⚠️ In der Juli-Klausur gab es **0 Punkte ohne vollständiges Diagramm**. Die Diagramme sind hier Pflicht!
+⚠️ In der Juli-Klausur gab es für diese Aufgabe 0 von 3 Punkten. Mein Rat (eigene Einschätzung): Zeichne beide Diagramme vollständig, denn die Aufgabe verlangt ausdrücklich „anhand geeigneter Diagramme“.
 
 ---
 
@@ -1834,7 +1834,7 @@ Kriechzahl: φ = ε_k / ε_el
 
 In beiden Fällen ist es **Stahl** (E = 200.000–210.000 N/mm²).
 
-Typischer Fehler: ‰ nicht in eine Dezimalzahl umgerechnet. Es gilt 1 ‰ = 10⁻³ und 1 % = 10⁻².
+In der Juli-Klausur gab es hier 0 von 3 Punkten, die Lösung muss also sitzen. Achtung beim Umrechnen: 1 ‰ = 10⁻³ und 1 % = 10⁻².
 
 ---
 
@@ -1842,7 +1842,7 @@ Typischer Fehler: ‰ nicht in eine Dezimalzahl umgerechnet. Es gilt 1 ‰ = 10�
 **Frage:** (Altklausur Aufg. 11, 3 Pkt.) Berechne die Längenänderung Δl **in mm** und die Temperaturdehnung ε_T **in ‰** einer **Stahlstütze**.
 **Feb 24:** l₀ = 3,0 m, Δϑ = 15 K · **Juli 24:** l₀ = 4,0 m, Δϑ = 20 K
 
-**Antwort:** α_T,Stahl = **10 · 10⁻⁶ 1/K**. Diesen Wert hat die Professorin in der Juli-Korrektur markiert.
+**Antwort:** α_T,Stahl = **10 · 10⁻⁶ 1/K** (Folientabelle; auf dem Juli-Scan gelb markiert).
 
 **Feb 24:**
 - ε_T = α_T · Δϑ = 10 · 10⁻⁶ 1/K · 15 K = 1,5 · 10⁻⁴ = **0,15 ‰**
@@ -1852,7 +1852,7 @@ Typischer Fehler: ‰ nicht in eine Dezimalzahl umgerechnet. Es gilt 1 ‰ = 10�
 - ε_T = 10 · 10⁻⁶ 1/K · 20 K = 2,0 · 10⁻⁴ = **0,2 ‰**
 - Δl = 2,0 · 10⁻⁴ · 4.000 mm = **0,8 mm**
 
-⚠️ Achte auf die gefragte Einheit: ‰ heißt mal 1.000, nicht mal 100. In der Juli-Korrektur gab es dafür Abzug.
+⚠️ Achte auf die gefragte Einheit: ‰ heißt mal 1.000, nicht mal 100. In der Juli-Korrektur wurde „·100“ rot zu „·1000 = 0,2 ‰“ verbessert (2,5 von 3 Punkten).
 
 ---
 
@@ -1874,7 +1874,7 @@ b) Rechenweg (Temperaturdehnung, dann Hooke):
 
 Bei Abkühlung will sich das Bauteil verkürzen. Die Einspannung verhindert das, deshalb ist es eine **Zugspannung** (Zwangsspannung).
 
-⚠️ Einheit N/mm² hinschreiben, ohne Einheit gab es Abzug.
+⚠️ Einheiten immer hinschreiben: In der Juli-Korrektur wurden bei a) „1/K“ und bei b) „N/mm²“ rot ergänzt (2 von 3 Punkten).
 
 ---
 
@@ -1890,7 +1890,7 @@ b)
 
 Deshalb nimmt λ zu und der Wärmedurchlasswiderstand R ab. Wärmedämmende Baustoffe vor Feuchtigkeit schützen!
 
-⚠️ In der Juli-Korrektur fehlte bei a) der **Feuchtegehalt**, dafür gab es Abzug. Alle 5 Punkte nennen!
+⚠️ In der Juli-Korrektur wurde bei a) „Feuchtigkeitsgehalt“ rot durch den Folienbegriff **„Feuchtegehalt“** ersetzt (3,5 von 4,5 Punkten). Nenne alle fünf Einflüsse mit den Begriffen von der Folie!
 
 ---
 

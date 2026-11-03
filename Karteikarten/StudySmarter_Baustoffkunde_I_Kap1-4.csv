@@ -805,7 +805,7 @@ b) ρ_R ≈ 7,85 kg/dm³ ist die Rohdichte von Stahl."
 - a) Spröde: steile Gerade (E = tan α) bis zum plötzlichen Bruch bei kleiner Dehnung. Es gibt keine plastische Verformung, und der Bruch kündigt sich nicht an. Die Reißspannung σ_R ist gleich der Festigkeit R. Beispiele: Glas, Beton.
 - b) Zäh: erst eine Gerade (elastisch), dann eine gekrümmte Kurve (plastisch) bis zum Maximum R. Danach fällt sie (Einschnürung) bis zum Bruch bei großer Dehnung. Die Reißspannung liegt unter R, der Bruch kündigt sich an. Beispiel: Baustahl.
 
-Zeichne beide Kurven in ein Diagramm und beschrifte Festigkeit R und Reißspannung σ_R. So steht es auf der Folie, und so wurde in der Korrektur volle Punktzahl vergeben."
+Zeichne beide Kurven in ein Diagramm und beschrifte Festigkeit R und Reißspannung σ_R, so wie auf der Folie. In der Juli-Klausur gab es für diese Aufgabe 3 von 3 Punkten."
 "(Altklausur Aufg. 8, 3 Pkt.) Erläutere anhand geeigneter Diagramme den Begriff „Kriechen“ eines Baustoffs.";"Definition: zeit- und temperaturabhängige Verformung unter konstanter Spannung.
 
 Zwei Diagramme untereinander zeichnen:
@@ -819,7 +819,7 @@ Zwei Diagramme untereinander zeichnen:
 
 Kriechzahl: φ = ε_k / ε_el
 
-⚠️ In der Juli-Klausur gab es 0 Punkte ohne vollständiges Diagramm. Die Diagramme sind hier Pflicht!"
+⚠️ In der Juli-Klausur gab es für diese Aufgabe 0 von 3 Punkten. Mein Rat (eigene Einschätzung): Zeichne beide Diagramme vollständig, denn die Aufgabe verlangt ausdrücklich „anhand geeigneter Diagramme“."
 "(Altklausur Aufg. 9, 2 Pkt.) Erläutere den Unterschied zwischen elastischem und plastischem Verformungsverhalten.";"- Elastisch: Nach Wegnahme der Last nimmt der Baustoff wieder seine unverformte Ausgangsform an. Die Verformung ist reversibel, es bleibt keine Dehnung zurück. Bei linear-elastischem Verhalten gilt Hooke: σ = E · ε.
 - Plastisch: Nach Überschreiten einer Grenzspannung (Elastizitäts- bzw. Fließgrenze) treten bleibende, irreversible Verformungen auf."
 "🧮 (Altklausur Aufg. 10, 3 Pkt.) Ein elastischer Baustoff erfährt eine Spannung σ mit der Dehnung ε. Wie groß ist sein E-Modul in N/mm²? Um welchen Stoff könnte es sich handeln?
@@ -829,9 +829,9 @@ Feb 24: σ = 200 N/mm², ε = 1 ‰ · Juli 24: σ = 500 N/mm², ε = 2,5 ‰";"
 
 In beiden Fällen ist es Stahl (E = 200.000–210.000 N/mm²).
 
-Typischer Fehler: ‰ nicht in eine Dezimalzahl umgerechnet. Es gilt 1 ‰ = 10⁻³ und 1 % = 10⁻²."
+In der Juli-Klausur gab es hier 0 von 3 Punkten, die Lösung muss also sitzen. Achtung beim Umrechnen: 1 ‰ = 10⁻³ und 1 % = 10⁻²."
 "🧮 (Altklausur Aufg. 11, 3 Pkt.) Berechne die Längenänderung Δl in mm und die Temperaturdehnung ε_T in ‰ einer Stahlstütze.
-Feb 24: l₀ = 3,0 m, Δϑ = 15 K · Juli 24: l₀ = 4,0 m, Δϑ = 20 K";"α_T,Stahl = 10 · 10⁻⁶ 1/K. Diesen Wert hat die Professorin in der Juli-Korrektur markiert.
+Feb 24: l₀ = 3,0 m, Δϑ = 15 K · Juli 24: l₀ = 4,0 m, Δϑ = 20 K";"α_T,Stahl = 10 · 10⁻⁶ 1/K (Folientabelle; auf dem Juli-Scan gelb markiert).
 
 Feb 24:
 - ε_T = α_T · Δϑ = 10 · 10⁻⁶ 1/K · 15 K = 1,5 · 10⁻⁴ = 0,15 ‰
@@ -841,7 +841,7 @@ Juli 24:
 - ε_T = 10 · 10⁻⁶ 1/K · 20 K = 2,0 · 10⁻⁴ = 0,2 ‰
 - Δl = 2,0 · 10⁻⁴ · 4.000 mm = 0,8 mm
 
-⚠️ Achte auf die gefragte Einheit: ‰ heißt mal 1.000, nicht mal 100. In der Juli-Korrektur gab es dafür Abzug."
+⚠️ Achte auf die gefragte Einheit: ‰ heißt mal 1.000, nicht mal 100. In der Juli-Korrektur wurde „·100“ rot zu „·1000 = 0,2 ‰“ verbessert (2,5 von 3 Punkten)."
 "🧮 (Altklausur Aufg. 12, 3 Pkt.) Ein Bauteil aus Beton ist vollständig dehnungsbehindert (voll eingespannt).
 a) Gib den Wärmeausdehnungskoeffizienten von Beton an.
 b) Berechne die Spannung, wenn das Bauteil von 15 °C auf −10 °C abgekühlt wird.
@@ -856,7 +856,7 @@ b) Rechenweg (Temperaturdehnung, dann Hooke):
 
 Bei Abkühlung will sich das Bauteil verkürzen. Die Einspannung verhindert das, deshalb ist es eine Zugspannung (Zwangsspannung).
 
-⚠️ Einheit N/mm² hinschreiben, ohne Einheit gab es Abzug."
+⚠️ Einheiten immer hinschreiben: In der Juli-Korrektur wurden bei a) „1/K“ und bei b) „N/mm²“ rot ergänzt (2 von 3 Punkten)."
 "(Altklausur Aufg. 13, 4,5 Pkt.) a) Durch welche Baustoffeigenschaften wird die Wärmeleitzahl λ bestimmt? b) Warum nimmt λ mit zunehmendem Feuchtegehalt zu?";"a) Struktur (kristallin oder amorph), Porosität bzw. Porengröße, Rohdichte, Temperatur und Feuchtegehalt
 
 b)
@@ -865,7 +865,7 @@ b)
 
 Deshalb nimmt λ zu und der Wärmedurchlasswiderstand R ab. Wärmedämmende Baustoffe vor Feuchtigkeit schützen!
 
-⚠️ In der Juli-Korrektur fehlte bei a) der Feuchtegehalt, dafür gab es Abzug. Alle 5 Punkte nennen!"
+⚠️ In der Juli-Korrektur wurde bei a) „Feuchtigkeitsgehalt“ rot durch den Folienbegriff „Feuchtegehalt“ ersetzt (3,5 von 4,5 Punkten). Nenne alle fünf Einflüsse mit den Begriffen von der Folie!"
 "(Altklausur Feb 24, Aufg. 39, 2 Pkt.) Die zentrische Zugfestigkeit von Beton lässt sich aus prüftechnischen Gründen nur schwer bestimmen. Welche beiden Versuche führt man stattdessen durch?";"1. Biegezugversuch (Drei- oder Vier-Punkt-Biegung): β_BZ = P · l / (b · h²); β_Z ≈ 0,45–0,55 · β_BZ
 2. Spaltzugversuch (linienförmige Last auf Zylinder oder Prisma): β_SZ = 2P / (π · D · l); β_Z ≈ 0,75–0,90 · β_SZ"
 "(Altklausur Feb 24, Aufg. 40, 3 Pkt.) Warum liefern Betonwürfel (a = 150 mm) in der Druckfestigkeitsprüfung höhere Werte als Betonzylinder (d = 150 mm, l = 300 mm)?";"- Zwischen Probekörper und den steifen Druckplatten wirkt Reibung. Sie behindert die Querdehnung, und dadurch steigt die gemessene Druckfestigkeit scheinbar.
