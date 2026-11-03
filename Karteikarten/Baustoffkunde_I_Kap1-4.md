@@ -14,6 +14,22 @@
 
 ## 1.1 Einführung
 
+### Karte 0
+**Frage:** Vergleiche die Eigenschaften von **Beton, Mauerwerk, Stahl und Holz** bei üblicher Anwendung (Druck- und Zugfestigkeit, E-Modul, Besonderheiten).
+
+**Antwort:**
+
+| Eigenschaft | Beton | Mauerwerk | Stahl | Holz |
+|---|---|---|---|---|
+| Druckfestigkeit | 40 MPa | 5 MPa | 250 MPa | 40 MPa axial, 5 MPa quer |
+| Zugfestigkeit | 4 MPa | 0,3 MPa | 250 MPa | 100 MPa axial, 3,5 MPa quer |
+| E-Modul (Verformbarkeit) | 25.000 MPa | 3.000 MPa | 210.000 MPa | 11.000 MPa |
+| Besonderheiten | leichte Formgebung; als Stahlbeton auch hohe Zugfestigkeit | einfache, preiswerte Herstellung; Festigkeit begrenzt | geringe Querschnitte, filigrane Tragwerke möglich; relativ teuer | einfach wiederverwertbar, ökologisch; Tragfähigkeit begrenzt |
+
+Merke: Beton und Mauerwerk sind **druckfest, aber zugschwach**. Stahl ist auf Zug und Druck gleich fest. Holz ist **anisotrop**: axial viel fester als quer.
+
+---
+
 ### Karte 1
 **Frage:** Welche **drei** Anforderungen an Baustoffe gibt es? Nenne jeweils passende Eigenschaften.
 
@@ -86,13 +102,13 @@
 - um 2.600 v. Chr.: Brenn- und Schmelzöfen für Kupfer
 - um 1.400 v. Chr.: Stahllegierungen, Kaltverformen
 - um 900 v. Chr.: Wärmebehandlung von Stahl (Römer, Griechen)
-- um 600 v. Chr.: Massenproduktion keramischer Werkstoffe durch die Römer
+- um 600 v. Chr.: Massenproduktion keramischer Werkstoffe durch die Römer, Weiterentwicklung der Mörtelarten
 - um 100 v. Chr.: **hydraulische Bindemittel** (wasserbeständig), für Aquädukte und Häfen
 - um Christi Geburt: **römischer Beton** mit puzzolanischen Bindemitteln (*opus caementitium*)
 - Mittelalter: keine wesentlichen neuen Baustoffe
 - um **1850: Erfindung des Portlandzements**, Anfang des modernen Betons
 - um 1940: Kunststoffe im Bauwesen
-- um 1960: moderne Verbundwerkstoffe (z. B. faserverstärkt)
+- um 1960: moderne Verbundwerkstoffe (z. B. faserverstärkt), Weiterentwicklung keramischer Baustoffe
 - heute: ressourcenschonende Produktion, Recyclingstoffe und Nebenprodukte
 
 ---
@@ -273,7 +289,7 @@ Beispiele aus MVV TB C 2: Beton nach DIN 1045-2 → ÜZ; Betonfenster → ÜZ; *
 | Name | allgemeine bauaufsichtliche Zulassung | allgemeines bauaufsichtliches Prüfzeugnis | Zustimmung im Einzelfall |
 | Wer erteilt? | **DIBt** (Berlin), mit Sachverständigenausschüssen | beim DIBt eingetragene **Prüfstelle** | **oberste Bauaufsichtsbehörde** |
 | Wofür? | nicht geregelte Bauprodukte; Antrag der Herstellerfirma, teils umfangreiche Prüfungen | Produkte **ohne erhebliche Sicherheitsanforderungen** oder nach anerkannten Prüfverfahren beurteilbar (MVV TB C 3 und C 4) | häufig **neuartige Produkte für eine konkrete Baumaßnahme** |
-| Geltung | befristet, **meist 5 Jahre** | allgemein | nur **für den Einzelfall** |
+| Geltung | befristet, **meist 5 Jahre** | – | nur **für den Einzelfall** |
 
 ---
 
@@ -306,7 +322,7 @@ Auf der Folie gilt die MVV TB C 3 (abP) als Sonderfall der national geregelten P
 **Frage:** Was regelt die **Bauproduktenverordnung (BauPVO)**, und wann dürfen Bauprodukte EU-weit in den Verkehr gebracht werden?
 
 **Antwort:**
-- Grundlage: **Verordnung (EU) Nr. 305/2011**. Sie hat die **Bauproduktenrichtlinie (BPR)** abgelöst, die bis Juni 2013 galt. Englisch: Construction Products Regulation (CPR).
+- Grundlage: **Verordnung (EU) Nr. 305/2011** vom 9. März 2011. Sie hat die **Bauproduktenrichtlinie (BPR)** abgelöst, die bis Juni 2013 galt. Englisch: Construction Products Regulation (CPR).
 - Ziel: gemeinsamer Binnenmarkt, freier Warenverkehr, Harmonisierung der technischen Vorschriften.
 - Bauprodukte dürfen in Verkehr gebracht werden, wenn sie **harmonisierten Normen (hEN-Liste)** entsprechen oder eine **Europäische Technische Bewertung (ETA)** haben.
 - Sie müssen **brauchbar** sein: Das Bauwerk muss bei ordnungsgemäßer Planung und Ausführung die Grundanforderungen erfüllen können.
@@ -713,7 +729,7 @@ Versagen durch:
 **Frage:** Was ist die **Poissonzahl ν** (Querdehnzahl µ)? Nenne Werte für einige Baustoffe.
 
 **Antwort:**
-- µ = ν = ε_q / ε_l = (Δd/d₀) / (Δl/l₀). Bei elastischer Beanspruchung ist sie für einen Baustoff **konstant**, also ein **Werkstoffkennwert**. Rechne mit den Beträgen.
+- µ = ν = ε_q / ε_l = (Δd/d₀) / (Δl/l₀). Bei elastischer Beanspruchung ist sie für einen Baustoff **konstant**, also ein **Werkstoffkennwert**.
 - Generell gilt **0 ≤ µ ≤ 0,5**.
 - Bei **µ = 0,5** bleibt das Volumen bei kleinen Verformungen konstant (z. B. Kautschuk).
 - Werte: Stahl 0,30 · Glas 0,25 · Naturstein 0,25 · Kautschuk 0,50 · Beton 0,1–0,35 (Mittelwert 0,2)
@@ -802,7 +818,8 @@ Dabei ist τ die Schubspannung, γ die Gleitung (Schubverzerrung, Winkel) und µ
 **Antwort:**
 - **Plastisch:** Nach Überschreiten einer Grenzspannung (**Elastizitätsgrenze** bzw. **Fließgrenze**) treten **bleibende Verformungen** auf.
 - **Elastisch-plastisch:** Vor der plastischen Verformung kommt eine elastische Verformung.
-- Modell: der **St. Venant'sche Gleitreibungskörper** (Feder plus Reibklotz). Bis σ_F verformt er sich elastisch, dann fließt er auf einem **Fließplateau** (ideal plastisch). Beim Entlasten federt nur der elastische Anteil zurück (parallel zur Anfangsgeraden), der plastische Anteil ε_pl **bleibt**.
+- Modell: der **St. Venant'sche Gleitreibungskörper** (Feder plus Reibklotz). Bis σ_F verformt er sich elastisch, dann fließt er auf einem **Fließplateau** (ideal plastisch, mögliche Verfestigung). Beim Entlasten federt nur der elastische Anteil zurück (parallel zur Anfangsgeraden), der plastische Anteil ε_pl **bleibt**.
+- Arbeit (Folie): ges W = σ_F · ε_F / 2 + σ_F · ε_pl. Davon ist max W_el = σ_F · ε_F / 2 reversibel und W_pl = σ_F · ε_pl irreversibel.
 
 ---
 
@@ -817,7 +834,7 @@ Dabei ist τ die Schubspannung, γ die Gleitung (Schubverzerrung, Winkel) und µ
 | Verformung | reversibel | irreversibel |
 | Wann? | unterhalb der Elastizitätsgrenze | nach Überschreiten der Fließgrenze |
 | Gesetz | Hooke σ = E · ε (bei linear-elastisch) | kein Hooke; Fließen auf dem Fließplateau (ideal elastisch-plastisch) |
-| Modell | Feder | St. Venant'scher Gleitreibungskörper (Feder + Reibklotz) |
+| Modell | – | St. Venant'scher Gleitreibungskörper (Feder + Reibklotz) |
 | Beispiele | Elastomere, Glas, Stahl bis σ_E | Stahl nach der Fließgrenze (Fließplateau), zähe Metalle |
 
 In beiden Fällen ist die Verformung **zeitunabhängig**, anders als bei der Viskoelastizität.
@@ -922,10 +939,12 @@ Beide sind viskoelastisch, zeit- und temperaturabhängig.
 **Antwort:**
 
 **Spröder Bruch:**
-1. **Trennbruch:** Die Bruchfläche liegt **senkrecht zur Zugrichtung** (quer durch den Stab), ohne Einschnürung. Die Probe bleibt außer am Bruch unverformt. Beispiele: Glas, Beton, Porzellan.
+1. **Trennbruch:** Die Bruchfläche liegt **senkrecht zur Zugrichtung** (quer durch den Stab), ohne Einschnürung. Die Probe bleibt außer am Bruch unverformt.
    Skizze: Rechteck mit **waagrechter** (leicht zackiger) Bruchlinie.
 2. **Scherbruch:** Die Bruchfläche verläuft **schräg** zur Zugrichtung, ohne Einschnürung (vgl. Schrägschnitt: dort wirkt Schubspannung τ = p · sin φ).
    Skizze: Rechteck mit **schräger** Bruchlinie.
+
+Beispiele für spröden Bruch: Porzellan, Glas, Beton.
 
 **Zäher Bruch:**
 
@@ -938,7 +957,7 @@ Beide sind viskoelastisch, zeit- und temperaturabhängig.
 **Frage:** Wie wirken **Kerben** und **Löcher** auf zähe und spröde Werkstoffe?
 
 **Antwort:**
-- Kerben und Löcher erzeugen **Spannungsspitzen** (σ_n > σ). Je kleiner der Kerbradius, desto höher die Spitze.
+- Kerben und Löcher erzeugen **Spannungsspitzen** (σ_n > σ).
 - **Zäher Werkstoff:** Er baut die Spitzen durch plastisches Fließen ab, die Kerbe **rundet sich aus** (Radius wird größer, r ≫ r₀).
 - **Spröder Werkstoff:** Er kann die Spitzen nicht abbauen, die Kerbe wird **schärfer** (r < r₀), der Riss läuft weiter, es kommt zum Bruch.
 
@@ -1249,10 +1268,7 @@ Man unterscheidet den **sommerlichen** Wärmeschutz (gegen Überhitzung und Sonn
 ### Karte 92
 **Frage:** Wie breitet sich Wärme in **festen porösen Körpern** aus?
 
-**Antwort:** In einer Pore wirken alle Mechanismen gleichzeitig:
-- (1) **Leitung** durch das Feststoffgerüst (und die Kapillaren)
-- (2) **Strahlung** über die Pore hinweg (von der wärmeren zur kälteren Porenwand)
-- (3) **Leitung bzw. Konvektion** durch das Gas (Luft) in der Pore
+**Antwort:** Die Folie zeigt eine Pore zwischen wärmerer und kälterer Seite mit Kapillaren und drei markierten Transportwegen (1), (2), (3). Wärme gelangt also auf mehreren Wegen gleichzeitig durch den porösen Körper: durch den Feststoff bzw. die Kapillaren und über die Pore hinweg.
 
 Ist Feuchte in den Poren, kommt Transport durch **Wasserdampfdiffusion** dazu (siehe Feuchteeinfluss).
 
@@ -1539,6 +1555,7 @@ Sonderfälle:
 - **Farbe:** Dunkle bzw. schwarze Flächen absorbieren mehr und werden heißer. Bei Außenputz an einer Westwand: schwarz bis ≈ 65 °C, kräftige Farbe ≈ 57 °C, helle Farbe ≈ 45 °C, weiß ≈ 30 °C (Außenluft ≈ 23 °C).
 - **Einfallswinkel:** Je **steiler** die Strahlung auftrifft, desto stärker die Erwärmung.
 - **Orientierung (Mitteleuropa):** **Westwände** erwärmen sich stärker als Südwände. **Horizontale Flächen** erwärmen sich am stärksten.
+- Tagesverlauf (Diagramm, Sommertag): **Ostwand** hat ihr Maximum vormittags (≈ 45 °C), **Südwand** mittags (≈ 40 °C), **Westwand** nachmittags (≈ 50 °C, am höchsten), **Nordwand** bleibt am kühlsten (≈ 29 °C).
 
 ---
 
