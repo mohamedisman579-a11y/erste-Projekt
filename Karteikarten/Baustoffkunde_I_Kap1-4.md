@@ -671,7 +671,48 @@ Spannungen entstehen aus
 - **Zwangsspannungen:** z. B. durch behinderte Verformung oder Setzungen
 - **Eigenspannungen:** z. B. durch Temperaturänderungen, Schwinden, Quellen
 
-Folienbeispiele: **Zwang** entsteht, wenn die freie Verformung behindert wird (z. B. ein beidseitig eingespanntes Bauteil). **Eigenspannung** entsteht z. B. durch eine Temperaturänderung im Bauteil.
+Folienbeispiele (siehe Karten 48c und 48d): **Zwang** bei einer Kellerwand auf einer Sohle, **Eigenspannung** in einer Betonwand nach dem Entschalen.
+
+---
+
+### Karte 48b
+**Frage:** Nenne die sechs Grundarten der Beanspruchung (Folienskizze).
+
+**Antwort:** **Zug, Druck, Biegung, Spaltzug, Abscheren, Torsion**
+
+Skizzen-Merkhilfe: Zug ist ein Stab, an dem zwei Pfeile nach außen ziehen. Druck ist ein Würfel mit zwei Pfeilen nach innen. Biegung ist ein Balken auf zwei Auflagern mit Last in der Mitte. Spaltzug ist eine Linienlast auf einem liegenden Zylinder. Abscheren ist ein eingespannter Kragarm mit Querkraft. Torsion ist ein verdrehter Stab.
+
+---
+
+### Karte 48c
+**Frage:** Erkläre **Zwang** am Folienbeispiel der **Kellerwand**.
+
+**Antwort:**
+- Zwang entsteht, wenn die **freie Verformung behindert** wird.
+- Folienbeispiel: Eine **Kellerwand** steht auf einer **Sohle**. Die Sohle behindert die freie Verformung der Wand.
+- Folge: **senkrechte Risse** in der Wand (in der Ansicht sichtbar).
+
+---
+
+### Karte 48d
+**Frage:** Erkläre **Eigenspannungen** am Folienbeispiel einer Betonwand nach dem **Entschalen**.
+
+**Antwort:**
+- **Vor dem Entschalen:** Die Betontemperatur T_Beton liegt über der Lufttemperatur.
+- **Nach dem Entschalen:** Die Oberfläche kühlt schnell auf Lufttemperatur ab, der **Kern bleibt warm**. Die Temperaturverteilung über die Dicke ist gewölbt.
+- Der kalte Rand will sich verkürzen, der warme Kern nicht. Dadurch entsteht **am Rand Zug** und **im Kern Druck** (Eigenspannung σ_E, ohne äußere Last).
+- Folge: **Risse** an der Oberfläche (in der Ansicht).
+
+---
+
+### Karte 48e
+**Frage:** Wie sieht der Spannungsverlauf einer **Hochbaustütze** über die Zeit aus? Welche Beispiele zeigt die Folie für statische Beanspruchung?
+
+**Antwort:**
+- **Bauzeit:** Die Spannung aus Eigengewicht σ_g steigt **stufenweise** an (jedes neue Geschoss bringt mehr Last).
+- **Nutzung:** σ_g bleibt konstant, dazu kommt die schwankende **Verkehrslast** σ_p.
+- Wirkende Spannung nach Dauer: **kurz**, **länger**, **dauernd**.
+- Zweites Folienbeispiel: **Biegebeanspruchung** aus Eigenlast und Verkehrslast bei einem Balken. In der **Zugzone (unten) entstehen Risse**.
 
 ---
 
@@ -682,6 +723,10 @@ Folienbeispiele: **Zwang** entsteht, wenn die freie Verformung behindert wird (z
 - **Statisch:** Die Lasten sind zeitlich konstant, also vorwiegend ruhende, ständig wirkende Belastung. Beispiele: Eigengewicht, Verkehrslast auf einer Hochbaustütze, Biegung aus Eigengewicht und Verkehr.
 - **Dynamisch:** Die Lasten ändern sich mit der Zeit (vorwiegend nicht ruhend). Das sind schlagartige Lasten (Explosion, Erdbeben) oder Lasten, die sich über längere Zeit periodisch ändern. Beispiele: Brücken, Treppengeländer. Dabei schwingt die Spannung um eine Mittelspannung (z. B. aus Eigengewicht).
 - **Kombiniert:** Mehrere statische und/oder dynamische Einwirkungen überlagern sich.
+
+Folienskizzen zur dynamischen Beanspruchung: **Dauerschwingbeanspruchung** (Kragarm schwingt hin und her) und **Stoßbeanspruchung** (Körper prallt auf eine Wand).
+
+Begriffe bei schwingender Beanspruchung (Folie 7): Oberspannung σ_o, Unterspannung σ_u, Mittelspannung σ_m (z. B. aus Eigengewicht), Spannungsausschlag σ_a. Eine volle Schwingung heißt **Lastspiel**, ihre Dauer **Periodendauer t_p**, die **Frequenz** ist **1/t_p**.
 
 ---
 
@@ -1240,6 +1285,8 @@ Daraus folgt die Reihenfolge **β_BZ > β_SZ > β_Z** (Biegezug liefert die höc
 - **Bauwerk schützen:** Fehlerhafter Wärmeschutz kann zu **Feuchteschäden** führen.
 - Wärme- und Feuchteschutz sind eng verknüpft.
 
+Einwirkungen auf ein Gebäude (Folie 2): Sonne und Licht, Regen, Schnee und Frost, Wind, Feuchtigkeit, Wärme, Schall, Brand, Luftqualität (z. B. Formaldehyd, Radon).
+
 Man unterscheidet den **sommerlichen** Wärmeschutz (gegen Überhitzung und Sonneneinstrahlung) und den **winterlichen** Wärmeschutz (angenehmes Wohnklima bei Kälte).
 
 ---
@@ -1269,7 +1316,7 @@ Man unterscheidet den **sommerlichen** Wärmeschutz (gegen Überhitzung und Sonn
 ### Karte 92
 **Frage:** Wie breitet sich Wärme in **festen porösen Körpern** aus?
 
-**Antwort:** Die Folie zeigt eine Pore zwischen wärmerer und kälterer Seite mit Kapillaren und drei markierten Transportwegen (1), (2), (3). Wärme gelangt also auf mehreren Wegen gleichzeitig durch den porösen Körper: durch den Feststoff bzw. die Kapillaren und über die Pore hinweg.
+**Antwort:** Die Folie zeigt eine Pore zwischen wärmerer und kälterer Seite mit Kapillaren und drei markierten Transportwegen (1), (2), (3). Wärme gelangt also auf mehreren Wegen gleichzeitig durch den porösen Körper: durch den Feststoff bzw. die Kapillaren und über die Pore hinweg. Die Folie beschriftet die Wege (1)–(3) nicht mit Namen. Nenne in der Klausur die drei Arten der Wärmeübertragung (Leitung, Konvektion, Strahlung) und erkläre, dass sie in porösen Stoffen nebeneinander wirken.
 
 Ist Feuchte in den Poren, kommt Transport durch **Wasserdampfdiffusion** dazu (siehe Feuchteeinfluss).
 
@@ -1344,6 +1391,17 @@ Merke: Je kleiner λ, desto besser die Wärmedämmung bei gleicher Dicke.
 - Für optimalen Wärmeschutz soll **U möglichst klein** sein.
 
 Kette zum Merken: d, λ → R → R_T → U
+
+---
+
+### Karte 97b
+**Frage:** Skizziere den **Temperaturverlauf** durch ein **mehrschichtiges** Bauteil (Wärmedurchgang im stationären Zustand).
+
+**Antwort:**
+- Innen ist die Lufttemperatur θ_i. An der Innenoberfläche gibt es einen kleinen **Temperatursprung** auf θ_oi (Wärmeübergang, R_si).
+- In jeder Schicht verläuft die Temperatur **geradlinig**. Je **kleiner λ** einer Schicht, desto **steiler** fällt die Temperatur in ihr ab. Je **größer R = d/λ** einer Schicht, desto **größer** ist der Temperaturabfall über diese Schicht insgesamt.
+- An der Außenoberfläche gibt es wieder einen kleinen Sprung von θ_oa auf die Außenluft θ_a (R_sa).
+- Die Teilwiderstände addieren sich: R_T = R_si + d₁/λ₁ + d₂/λ₂ + … + R_sa.
 
 ---
 
@@ -1516,6 +1574,7 @@ Herkunft: Wärmebilanz für einen Streifen der Dicke s (Φ_ein − Φ_aus = Φ_s
 - Sie beschreibt das **Wärmeeindringverhalten** (Wärmeableitungsvermögen) einer Oberfläche bei kurzzeitigen Temperaturänderungen, z. B. **Fußwärme** beim Barfußgehen.
 - **b = √(c · ρ · λ)**
 - Wärme, die dem Fuß in der Zeit t entzogen wird: Q = √(c · ρ · λ) · ΔΘ_K · √t · F_K (F_K = Auflagefläche des Fußes)
+- Tabellenwerte (Folie 39), a in 10⁻⁴ m²/h und b in kJ/(m²·K·h^0,5): Normalbeton a = 29, b = 134 · Fichte a = 6, b = 20,9 · Stahl a = 530, b = 900 · Aluminium a = 4.400, b = 900 · Schaumkunststoffe a = 44, b = 2,1
 - b **steigt mit der Rohdichte**. Ein schwerer Stoff entzieht bei Berührung mehr Wärme als ein leichter. Deshalb fühlen sich **schwere Baustoffe (Beton, Naturstein) kälter an** als Holz oder Dämmstoffe.
 
 ---
