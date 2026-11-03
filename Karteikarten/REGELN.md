@@ -8,3 +8,4 @@
 6. **StudySmarter:** Mohamed lernt mit der App StudySmarter. Zu jedem Kartensatz gibt es deshalb zusätzlich eine Importdatei (Frage | Antwort, CSV/TSV), erzeugt mit `tools/export_studysmarter.py`. *(Hinweis vom 03.11.2026)*
 7. **Anki:** Neue Kartensätze als fertige Anki-Datei (.apkg) liefern, mit Unterstapeln je Kapitel und Tags (z. B. „Klausur“, „Rechnen“, „Altklausur“). *(Wunsch vom 03.11.2026)*
 8. **Erst fragen:** Vor dem Start eines neuen Kartensatzes Umfang und Quellen mit Mohamed klären. Klausuren prüfen, ob sie zum richtigen Fach gehören (Baustoffkunde 1 ≠ Baustoffkunde 2).
+9. **Obsidian:** Kartensätze zusätzlich als Obsidian-Ordner exportieren (`tools/export_obsidian.py`), damit sie im Vault liegen. *(Wunsch vom 03.11.2026)*
