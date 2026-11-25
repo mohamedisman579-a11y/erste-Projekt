@@ -75,7 +75,7 @@ Hinweise: Kein Angebot unter 15.000 € gefunden. **Auf Mascus** steht in Europa
 ---
 
 ## Nachtrag 25.11.2026: CAT 950 in jedem Baujahr, Zielpreis 20.000–24.000 €
-**Methode:** Ich habe auf Mascus.de alle 2.841 CAT-Radlader-Anzeigen durchgesehen ([Liste](https://www.mascus.de/baumaschinen/radlader/cat)). Davon stehen 142 CAT 950 in Europa, 91 mit Preisangabe. Zusätzlich habe ich die Maschinensucher-Suche „caterpillar 950“ geprüft (390 Treffer, CAT gesamt). Dort wird der Preisfilter von der Seite ignoriert, und die 950er kosten ab 49.900 € oder werden „auf Anfrage“ angeboten.
+**Methode:** Ich habe auf Mascus.de alle CAT-Radlader-Anzeigen durchgesehen (2.842 laut Trefferzähler, davon 2.841 eindeutige beim Abruf) ([Liste](https://www.mascus.de/baumaschinen/radlader/cat)). Davon stehen laut meiner Auswertung der Anzeigedaten 142 CAT 950 in Europa, 91 mit Preisangabe, und keiner liegt zwischen 10.000 und 24.999 € (Auswertung am 25.11.2026 per Skript, Rohdaten im Arbeitsverzeichnis). Zusätzlich habe ich die Maschinensucher-Suche „caterpillar 950“ geprüft (390 Treffer, CAT gesamt). Dort wird der Preisfilter von der Seite ignoriert, und die 950er kosten ab 49.900 € oder werden „auf Anfrage“ angeboten.
 
 **Ergebnis (verifiziert):** **Im Bereich 20.000–24.000 € gibt es auf Mascus und Maschinensucher keinen einzigen CAT 950 in Europa.** Die günstigsten mit Preis:
 
@@ -83,15 +83,15 @@ Hinweise: Kein Angebot unter 15.000 € gefunden. **Auf Mascus** steht in Europa
 |---|---|---|---|---|---|---|---|
 | 25.000 € netto (31.000 € brutto) | 950C | 1980 | 6.993 | Patras, GR | Kallergis Machinery | Motor 3304T, 103 kW; 14 t; Reifen 20.5R25 ca. 65 %; neue Filter/Öle/Batterien; „keine Brüche, keine Leckagen, ein Besitzer, einsatzbereit“; Anzeige von 01/2023 | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950-c/7e8khheh.html) |
 | 27.500 € netto (34.100 € brutto) | 950C | 1980 | 4.721 | Patras, GR | Kallergis Machinery | 3304T; Reifen ca. 70 %; Zahnschaufel; gleiche Zustandsangaben; Anzeige von 08/2023 | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950-c/dgciejg7.html) |
-| 27.500 € | „950 G“, Bj. angegeben 2013 | 2013? | 4.000 | Litauen | Kaslita UAB | Klima, Zentralschmierung, Zusatzhydraulik, Schnellwechsler. **⚠ Ein 950G wurde 2013 nicht mehr gebaut → Baujahr vermutlich falsch** | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950-g/gd7g8gdb.html) |
-| 29.900 € | 950K | 2012 | 9.509 | Frankreich | SODINEG | C7.1, 172 kW; Klima; 3. Steuerkreis; Rückfahrkamera. **⚠ Preis für einen 950K von 2012 ungewöhnlich niedrig; derselbe Händler hat 3 solche Anzeigen → Betrugsrisiko prüfen** | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950k/46i5akef.html) |
+| 27.500 € | „950 G“, Bj. angegeben 2013 | 2013? | 4.000 | Litauen | Kaslita UAB | Klima, Zentralschmierung, Zusatzhydraulik, Schnellwechsler. **⚠ Einschätzung (nicht belegt): Die 950G-Serie lief nach meiner Kenntnis Mitte der 2000er aus. Das angegebene Baujahr 2013 ist daher zweifelhaft, beim Händler nachfragen** | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950-g/gd7g8gdb.html) |
+| 29.900 € | 950K | 2012 | 9.509 | Frankreich | SODINEG | C7.1, 172 kW; Klima; 3. Steuerkreis; Rückfahrkamera. **⚠ Preis für einen 950K von 2012 ungewöhnlich niedrig; derselbe Händler hat laut Mascus-Liste 3 solche 950K-Anzeigen (2012/2013, je 29.900 €) → Betrugsrisiko prüfen** | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950k/46i5akef.html) |
 | 33.000 € | 950G II | 2001 | 17.000 | Spanien | Districom Agro-Gutierrez | keine Angaben; Anzeige von 02/2022 (alt) | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950-g-ii/dkaf8k7h.html) |
 | 33.500 € | 950H | 2009 | 10.000 | Litauen | Kaslita UAB | Klima, Kamera, Hochkippschaufel, Schnellwechsler | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950-h/aj77gbij.html) |
-| 33.900 € | 950G | 2000 | k. A. | Middelbeers, NL | JN Machines | 3126, 143 kW; CE; Arbeitslicht; heute eingestellt | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950g/ic6959de.html) |
+| 33.900 € | 950G | 2000 | k. A. | Middelbeers, NL | JN Machines | 3126, 143 kW; CE; Arbeitslicht; technischer und optischer Zustand laut Anzeige „gut“; Anzeige erstellt 25.11.2026 | [Mascus](https://www.mascus.de/baumaschinen/radlader/cat-950g/ic6959de.html) |
 
 Netto/brutto ist nur bei den griechischen Angeboten ausgewiesen (MwSt 24 %). Bei den übrigen fehlt die MwSt-Angabe.
 
 **Einschätzung:**
-- Für 20.000–24.000 € bekommt man in Europa realistisch keinen CAT 950 von einem Händler. Der Boden liegt bei etwa 25.000 € netto, und zwar für 45 Jahre alte 950C. Möglich sind Privatverkauf, Auktion oder Verhandlung, zum Beispiel beim 950C für 25.000 €.
+- Für 20.000–24.000 € bekommt man in Europa realistisch keinen CAT 950 von einem Händler. Der Boden liegt bei etwa 25.000 € netto, und zwar für 46 Jahre alte 950C. Möglich sind Privatverkauf, Auktion oder Verhandlung, zum Beispiel beim 950C für 25.000 €.
 - Sehr günstige neue Modelle (950K 2012 für 29.900 €, „950G 2013“) sind Warnsignale. Vor einer Zahlung die Firma prüfen (Handelsregister, Telefon, Besichtigung vor Ort) und nie vorab überweisen.
 - **Alternative im Budget:** kleinere CAT-Radlader wie 924F, 928F oder 938F von 1995. Laut Such-Ausschnitten kosten sie in DE/NL etwa 19.900–25.900 € netto. Diese Angaben sind nicht verifiziert.
