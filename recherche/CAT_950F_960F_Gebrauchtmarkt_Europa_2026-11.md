@@ -75,7 +75,7 @@ Hinweise: Kein Angebot unter 15.000 € gefunden. **Auf Mascus** steht in Europa
 ---
 
 ## Nachtrag 25.11.2026: CAT 950 in jedem Baujahr, Zielpreis 20.000–24.000 €
-**Methode:** Ich habe auf Mascus.de alle CAT-Radlader-Anzeigen durchgesehen (2.842 laut Trefferzähler, davon 2.841 eindeutige beim Abruf) ([Liste](https://www.mascus.de/baumaschinen/radlader/cat)). Davon stehen laut meiner Auswertung der Anzeigedaten 142 CAT 950 in Europa, 91 mit Preisangabe, und keiner liegt zwischen 10.000 und 24.999 € (Auswertung am 25.11.2026 per Skript, Rohdaten im Arbeitsverzeichnis). Zusätzlich habe ich die Maschinensucher-Suche „caterpillar 950“ geprüft (390 Treffer, CAT gesamt). Dort wird der Preisfilter von der Seite ignoriert, und die 950er kosten ab 49.900 € oder werden „auf Anfrage“ angeboten.
+**Methode:** Ich habe auf Mascus.de alle CAT-Radlader-Anzeigen durchgesehen (2.842 laut Trefferzähler, davon 2.841 eindeutige beim Abruf) ([Liste](https://www.mascus.de/baumaschinen/radlader/cat)). Davon stehen laut meiner Auswertung der Anzeigedaten 142 CAT 950 in Europa, 91 mit Preisangabe, und keiner liegt zwischen 10.000 und 24.999 € (Auswertung am 25.11.2026 per Skript, Rohdaten im Arbeitsverzeichnis). Zusätzlich habe ich die Maschinensucher-Suche „caterpillar 950“ geprüft (390 Treffer, CAT gesamt). Dort ignoriert die Seite den Preisfilter. Auf Seite 1 standen nur ein 950M für 49.900 € netto und weitere 950er ohne Preis bzw. „auf Anfrage“ (950G-II 2005, Bosnien; 950GC 2021, Italien). Maschinensucher ist damit nur stichprobenartig geprüft.
 
 **Ergebnis (verifiziert):** **Im Bereich 20.000–24.000 € gibt es auf Mascus und Maschinensucher keinen einzigen CAT 950 in Europa.** Die günstigsten mit Preis:
 
